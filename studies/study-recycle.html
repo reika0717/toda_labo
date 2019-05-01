@@ -18,14 +18,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../assets/templates/js/lightbox.min.js"></script>
     <script>
-      //日本語ページと英語ページの入れ替えを作るURL作成スクリプト
-      $(function() {
-        CurUrl = location.href;
-        NewUrl = CurUrl.replace("~toda/", "~toda/en/");
-        $("#eng a").attr("href", NewUrl);
-      });
-    </script>
-    <script>
       (function(i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
         (i[r] =
@@ -218,5 +210,6 @@
         </div>
       </div>
     </div>
+    <script src="../assets/templates/js/main.js"></script>
   </body>
 </html>

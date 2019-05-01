@@ -723,7 +723,7 @@ body#index.en #right h3#updates {
 }
 
 #contents h5 {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 
 #contents h6 {
@@ -756,6 +756,14 @@ body#index.en #right h3#updates {
 
 #contents img {
   border: solid 1px #666;
+  margin: 18px 0;
+}
+
+#contents figcaption {
+  color: #2b801b;
+  font: normal normal bold 12px/1.3em "ＭＳ Ｐゴシック", Arial;
+  text-decoration: none;
+  margin-top: -10px;
 }
 
 #contents .imageholder {
@@ -842,13 +850,19 @@ body#index.en #right h3#updates {
 
 #body #contents ol,
 #body #contents ul {
-  margin: 10px 0 20px 0px;
+  margin: 10px 0 30px 0px;
 }
 
 #contents ul li {
   list-style-type: disc;
   text-indent: 0.2em;
   margin: 5px 0 0 15px;
+}
+
+#contents ul li p:nth-of-type(1) {
+  color: rgb(85, 85, 85);
+  font: bold 14px/1.2em "ＭＳ Ｐゴシック", Arial !important;
+  text-decoration: none;
 }
 
 #contents ul ul {
@@ -1033,6 +1047,8 @@ body#index #contents table#topics th {
 
 body#index #contents .fb-container {
   height: 710px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /*==============================================================================*/
@@ -1126,7 +1142,6 @@ body#study h3#study-recycle {
 }
 
 #study #contents h4 {
-  text-indent: 30px;
   color: #555555;
 }
 

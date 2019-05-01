@@ -19,14 +19,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../assets/templates/js/lightbox.min.js"></script>
     <script>
-      //日本語ページと英語ページの入れ替えを作るURL作成スクリプト
-      $(function() {
-        CurUrl = location.href;
-        NewUrl = CurUrl.replace("~toda/", "~toda/en/");
-        $("#eng a").attr("href", NewUrl);
-      });
-    </script>
-    <script>
       (function(i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
         (i[r] =
@@ -176,7 +168,9 @@
                   </ol>
 
                   <!-- 中身　-->
-                  <div class="sectitle"><h4>A) メタン発酵に関する研究</h4></div>
+                  <div class="sectitle" id="h4_1">
+                    <h4>A) メタン発酵に関する研究</h4>
+                  </div>
                   <p class="intro">
                     現在、生ごみをはじめとする様々な有機性廃棄物の多くは、焼却処理によって処分されています。メタン発酵は嫌気性微生物群を用いて有機性廃棄物をメタンガスに変換する処理方法です。メタン発酵処理は消費エネルギーが少なく、メタンガスはエネルギーに変換できるため、低エネルギー・創エネルギー処理として注目されています。また、メタン発酵残渣（消化液）には植物の成長に欠かせない栄養塩類が豊富に含まれていることから、消化液の有効利用も期待されています。当研究室では、メタン発酵効率の向上や消化液の有効利用法など様々な研究を行っています。
                   </p>
@@ -440,7 +434,7 @@
                   <div class="goTop"><a href="#top">ページトップへ</a></div>
 
                   <div class="sectitle">
-                    <h4>B) 微細藻類の高度利用に関する研究</h4>
+                    <h4 id="h4_2">B) 微細藻類の高度利用に関する研究</h4>
                   </div>
                   <p class="intro">
                     微細藻類は、二酸化炭素の固定速度が陸上植物と比較して高く、同時に、有機汚水に含まれる窒素やリンといった栄養成分を吸収・処理しながらバイオマス回収することができます。さらに、微細藻類は固定した二酸化炭素を用いて細胞内に脂肪酸、タンパク質およびカロテノイド色素などの有価物を蓄積することから、医薬品や化粧品、健康食品や動物飼料などへの応用も期待されています。現在、当研究室では微細藻類を用いた様々な研究を行っています。
@@ -564,5 +558,6 @@
         </div>
       </div>
     </div>
+    <script src="../assets/templates/js/main.js"></script>
   </body>
 </html>
