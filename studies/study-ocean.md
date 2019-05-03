@@ -2,7 +2,7 @@
 layout: study_children
 ---
 
-### I. 水圏生態系の研究 {#ocean_1}
+### I. 水圏生態系の研究
 
 ##### A) 相模湾における沿岸生態系の調査
 
@@ -72,7 +72,7 @@ PCR 法、迅速さの点で優れた FISH 法があります。これらの手�
 卵の圧力耐性は、どのような要因によって決定付けられ、また圧力の生態学的役割は何か。今後、さまざまな動物プランクトンの卵発生をはじめとした、生理生態に与える圧力の影響について研究、考察を進めていく予定です。
 
 {% include image.html url="../assets/images/manazuru11.jpg" description="圧力装置の構成図" %}
-{% include image.html url="../assets/images/manazuru12.jpg" description="動物プランクトンの日周鉛直移動の様子と<br />経験する深度" %}
+{% include image.html url="../assets/images/manazuru12.jpg" description="動物プランクトンの日周鉛直移動の様子と経験する深度" %}
 
 ##### ６.カイアシ類の赤ちゃん、ノープリウス幼生の研究 {#ocean_1-6}
 

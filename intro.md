@@ -18,7 +18,7 @@ layout: intro
 
 #### 指導教授紹介
 
-![image](./assets/images/toda_profile.jpg)
+![戸田龍樹](./assets/images/toda_profile.jpg)
 
 ##### 戸田龍樹
 

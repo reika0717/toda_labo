@@ -1,4 +1,8 @@
-<figure class="image" style="text-align: center;">
-  <img src="{{ include.url }}" alt="{{ include.description }}" />
+<figure class="image" style=" text-align: center; {{ include.wrapper_style }}">
+  <img
+    src="{{ include.url }}"
+    alt="{{ include.description }}"
+    style="{{ include.style }}"
+  />
   <figcaption>{{ include.description }}</figcaption>
 </figure>
