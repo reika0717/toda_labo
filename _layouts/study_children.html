@@ -147,10 +147,11 @@
     <script src="../assets/templates/js/main.js"></script>
     <script>
       $(function() {
-        //"/studies/study-waste.html"
         var path_name = location.pathname;
+
         path_name = path_name
-          .replace("/studies/study-", "")
+          .replace(`{{ site.baseurl }}/`, '')
+          .replace("studies/study-", "")
           .replace(".html", "");
         $("#submenu-" + path_name).addClass("active");
       });

@@ -11,7 +11,7 @@ layout: project
 
 #### これまで実施してきた大型プロジェクト
 
-{% include image.html url="../assets/images/projectlist.png" style="width: 454px"%}
+{% include image.html url="assets/images/projectlist.png" style="width: 454px"%}
 
 以下に最近の研究プロジェクトのいくつかをもう少し詳しく説明します。
 
@@ -25,8 +25,8 @@ SATREPS “地球規模課題対応国際科学技術協力プログラム”は
 詳細については[こちら](http://cosmos-satreps.org/)を御覧ください。
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
-{% include image.html url="../assets/images/overview_cosmos.jpg" description="本プロジェクトが目指すシステムの概略図" wrapper_style="margin-right: 10px;"%}
-{% include image.html url="../assets/images/COSMOS logo.jpg" description="日本とマレーシアの協力を表すプロジェクトのロゴ" wrapper_style="width: 101px;"%}
+{% include image.html url="assets/images/overview_cosmos.jpg" description="本プロジェクトが目指すシステムの概略図" wrapper_style="margin-right: 10px;"%}
+{% include image.html url="assets/images/COSMOS logo.jpg" description="日本とマレーシアの協力を表すプロジェクトのロゴ" wrapper_style="width: 101px;"%}
 </div>
 
 ##### ● 　[環境省　環境研究総合推進費委託費](./project-biwa.html)（2014-2016）
@@ -37,8 +37,8 @@ SATREPS “地球規模課題対応国際科学技術協力プログラム”は
 詳細については[こちら](./project-biwa.html)を御覧ください。
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
-{% include image.html url="../assets/images/biwa-proposal.jpg" description="本プロジェクトが目指す「現代版里湖循環型・自然共生社会」の概略図" style="width: 282px;" wrapper_style="width: 282px; margin-right: 10px;"%}
-{% include image.html url="../assets/images/biwa-wash.jpg" description="実験用に採取した水草の洗浄、選別作業。ものすごい量です。" style="width: 162px;" wrapper_style="width: 162px;"%}
+{% include image.html url="assets/images/biwa-proposal.jpg" description="本プロジェクトが目指す「現代版里湖循環型・自然共生社会」の概略図" style="width: 282px;" wrapper_style="width: 282px; margin-right: 10px;"%}
+{% include image.html url="assets/images/biwa-wash.jpg" description="実験用に採取した水草の洗浄、選別作業。ものすごい量です。" style="width: 162px;" wrapper_style="width: 162px;"%}
 </div>
 
 ● [長崎県新上五島町における磯焼け対策実証実験](./project-goto.html)（2014-2016）
@@ -47,7 +47,7 @@ SATREPS “地球規模課題対応国際科学技術協力プログラム”は
 温帯域から寒帯域にかけての沿岸岩礁地帯には、通常、波打ち際から数 10 m までの範囲に海藻類が繁茂します。それらの海藻藻場は仔稚魚の餌場や隠れ家となり、仔稚魚期における生存率を維持することで水産資源の保護に貢献してきました。ところが近年、日本沿岸の多くの海域でこれらの藻場が減少、衰退する「磯焼け」が大きな問題となっています。そこで、新上五島町からの委託事業（2014 年度～ 2016 年度）として、本海域において栄養塩施肥による磯焼け対策実証実験を行うこととなりました。
 詳細については[こちら](./project-goto.html)を御覧ください。
 
-{% include image.html url="../assets/images/goto-scheme.jpg" description="本プロジェクトにおける陸と海を繋ぐ栄養塩循環の概要"%}
+{% include image.html url="assets/images/goto-scheme.jpg" description="本プロジェクトにおける陸と海を繋ぐ栄養塩循環の概要"%}
 
 #### 過去のプロジェクト
 

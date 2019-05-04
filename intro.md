@@ -5,7 +5,7 @@ layout: intro
 ### 研究室紹介
 
 修復生態学研究室は、「水圏環境の保全と破壊された水圏環境の修復、水圏環境に負荷をかけない技術」の研究と開発を行っています。その研究範囲は、水圏生態学、プランクトン学、生態工学、水処理科学、廃棄物工学などの広い学問分野に及びます。
-![image](./assets/images/theme.jpg)
+![image](assets/images/theme.jpg)
 
 - 生態系を保全し、傷ついた生態系を修復する
 
@@ -18,7 +18,7 @@ layout: intro
 
 #### 指導教授紹介
 
-![戸田龍樹](./assets/images/toda_profile.jpg)
+![戸田龍樹](assets/images/toda_profile.jpg)
 
 ##### 戸田龍樹
 
