@@ -2,7 +2,7 @@
 layout: project_en
 ---
 
-### project
+### Projects
 
 #### Ministry of Education, Culture, Sports, Science and Technology (MEXT): Strategic Research Foundation Grant-aided Project for Private Universities
 

@@ -17,13 +17,6 @@ body {
   background: linear-gradient(#81c7b8, #344a5b);
 }
 
-body.en {
-  margin: 0 auto;
-  padding: 0;
-  font-family: "Trebuchet MS", "Verdana", "Helvetica", "Arial", "sans-serif" !important;
-  background: linear-gradient(#81c7b8, #344a5b);
-}
-
 img {
   border: 0px;
 }
@@ -153,9 +146,6 @@ table {
   font: normal normal normal 12px/2em "ＭＳ Ｐゴシック", Arial;
   text-decoration: none;
   text-align: right;
-}
-.en #body #contents * {
-  font-family: "Trebuchet MS", "Verdana", "Helvetica", "Arial", "sans-serif";
 }
 .en #body #contents p,
 .en #body #contents li,

@@ -63,7 +63,7 @@ $("#ja a").attr("href", NewUrl);
 <li id="mainmenu4"><a href="./study.html" title="Topics" >Topics</a></li>
 <li id="mainmenu6" class="active"><a href="./project.html" title="Projects" >Projects</a>
 	<ul id="submenu">
-	<li id="submenuCP" class="active"><a href="./project.html" title="Current projects">Current projects</a></li>
+	<li id="submenuCP"><a href="./project.html" title="Current projects">Current projects</a></li>
 	<li id="submenuPP"><a href="./pastprojects.html" title="Past projects">Past projects</a></li>
 	</ul>
 </li>
@@ -92,5 +92,15 @@ $("#ja a").attr("href", NewUrl);
 	</div>
 	</div>
 	</div>
+	<script>
+      $(function() {
+        var path_name = location.pathname;
+        if (path_name.indexOf("pastproject") !== -1) {
+          $("#submenuPP").addClass("active");
+        } else {
+          $("#submenuCP").addClass("active");
+        }
+      });
+    </script>
 </body>
 </html> 
