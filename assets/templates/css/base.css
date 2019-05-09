@@ -884,8 +884,9 @@ body#index.en #right h3#updates {
 /*=========================テーブル設定==========================*/
 
 #contents table {
-	margin: 20px 0 30px 20px;
 	border-collapse: collapse;
+	width: 100%;
+	word-break: break-word;
 }
 
 #contents table th {
@@ -895,7 +896,6 @@ body#index.en #right h3#updates {
 #contents table th,
 #contents table td {
 	border: solid 1px #444;
-	padding: 5px;
 	vertical-align: top;
 }
 
@@ -1105,14 +1105,12 @@ body#index #contents table#topics {
 body#index #contents table#topics th,
 body#index #contents table#topics td {
 	border: 0;
-	padding: 7px 7px;
+	padding: 7px 7px 7px 0px;
 	vertical-align: top;
 	background-color: transparent;
 }
 
 body#index #contents table#topics th {
-	padding-left: 10px;
-	background: url(../images/frame/topics_list.gif) no-repeat 0 0;
 	width: 4em;
 }
 
@@ -1133,23 +1131,28 @@ body#index #contents .fb-container {
 /*==============================================================================*/
 /*NEW XXXXXXX */
 
-body#news #contents table#topics {
-	margin: 0 0 0 17px;
-}
-
 body#news #contents table#topics th,
 body#news #contents table#topics td {
 	border: 0;
-	padding: 7px 7px;
 	vertical-align: top;
 	background-color: transparent;
+	padding-bottom: 10px;
 }
 
 body#news #contents table#topics th {
-	padding-left: 10px;
-	background: url(../images/frame/topics_list.gif) no-repeat 0 0;
-	width: 3.5em;
+	width: 44px;
+	text-align: left;
+	padding-right: 20px;
 }
+
+/* body#news #contents table#topics th:before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: green;
+	border-radius: 30px;
+} */
 
 /*==============================================================================*/
 /*                                 #English                                    */
