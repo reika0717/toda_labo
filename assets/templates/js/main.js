@@ -10,8 +10,7 @@ $(function () {
 	}
 	$("#eng a").attr("href", NewUrl);
 
-
-
+  console.log(location.pathname)
 	if (location.pathname === "/toda_labo/index.html" || location.pathname === "/toda_labo/") {
 		//ニュース
     $.ajax({
@@ -37,9 +36,59 @@ $(function () {
         }
       }
     })
-	} else if (location.pathname === "/toda_labo/news.html") {
+	} else if (location.pathname === "/toda_labo/en/index.html" || location.pathname === "/toda_labo/en/") {
+		//ニュース
+    $.ajax({
+      url: "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oupqnq2/public/values?alt=json",
+      dataType: "json",
+      async: true,
+      success: function (data) {
+        let entries = data.feed.entry
+        let news_array = []
+        for (let i = 2; i < entries.length; i = i + 2) {
+          let obj = {
+            date: entries[i].content.$t,
+            content: entries[i + 1].content.$t
+          }
+          news_array.push(obj)
+        }
+        for (let i = 0; i < 5; i++) {
+          //リンクをタグに変換
+          let reg = new RegExp(/\[(.+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/)
+          let content_modified = news_array[i].content.replace(reg, `<a href="$2">$1</a>`)
+          let single_news = `<tr><th>${news_array[i].date}</th><td>${content_modified}</td></tr>`
+          $("#topics").append(single_news)
+        }
+      }
+    })
+  } else if (location.pathname === "/toda_labo/news.html") {
     $.ajax({
       url: "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oi9egak/public/values?alt=json",
+      dataType: "json",
+      async: true,
+      success: function (data) {
+        let entries = data.feed.entry
+        let news_array = []
+        for (let i = 2; i < entries.length; i = i + 2) {
+          let obj = {
+            date: entries[i].content.$t,
+            content: entries[i + 1].content.$t
+          }
+          news_array.push(obj)
+        }
+        for (let i = 0; i < news_array.length; i++) {
+          //リンクをタグに変換
+          // let reg = new RegExp(/\[(.+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/)
+          let reg = new RegExp(/\[(.[^\]]+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/g)
+          let content_modified = news_array[i].content.replace(reg, `<a href="$2">$1</a>`)
+          let single_news = `<tr><th>${news_array[i].date}</th><td>${content_modified}</td></tr>`
+          $("#topics").append(single_news)
+        }
+      }
+    })
+  }  else if (location.pathname === "/toda_labo/en/news.html") {
+    $.ajax({
+      url: "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oupqnq2/public/values?alt=json",
       dataType: "json",
       async: true,
       success: function (data) {
