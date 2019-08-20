@@ -1085,7 +1085,6 @@ body#index.en #cover #cover_slide5 h2 {
 }
 
 body#index #left {
-  margin-bottom: 74px;
 }
 
 body#index #right h3 {
@@ -1106,6 +1105,7 @@ body#index #contents table#topics td {
   padding: 7px 7px 7px 0px;
   vertical-align: top;
   background-color: transparent;
+  line-height: 1.3em;
 }
 
 body#index #contents table#topics th {
