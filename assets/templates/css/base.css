@@ -1024,61 +1024,44 @@ body#index #cover h2 {
   height: 35vw;
 }
 
-body#index #cover #cover_slide1 h2 {
+body#index #cover .swiper-slide img {
+  width: 100%;
+  min-width: 740px;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+body#index.en #cover .swiper-slide1 h2 {
   background: url(../images/frame/cover_top.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
-body#index #cover #cover_slide2 h2 {
-  background: url(../images/frame/cover_top_ocean.jpg) no-repeat 0 0;
-  background-size: cover;
-  text-indent: -1000em;
-}
-
-body#index #cover #cover_slide3 h2 {
-  background: url(../images/frame/cover_top_pbr.jpg) no-repeat 0 0;
-  background-size: cover;
-  text-indent: -1000em;
-}
-
-body#index #cover #cover_slide4 h2 {
-  background: url(../images/frame/cover_top_goto.jpg) no-repeat 0 0;
-  background-size: cover;
-  text-indent: -1000em;
-}
-
-body#index #cover #cover_slide5 h2 {
-  background: url(../images/frame/cover_top_biwa.jpg) no-repeat 0 0;
-  background-size: cover;
-  text-indent: -1000em;
-}
-
-body#index.en #cover #cover_slide1 h2 {
-  background: url(../images/frame/cover_top.jpg) no-repeat 0 0;
-  background-size: cover;
-  text-indent: -1000em;
-}
-
-body#index.en #cover #cover_slide2 h2 {
+body#index.en #cover .swiper-slide2 h2 {
   background: url(../images/frame/cover_top_ocean-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
-body#index.en #cover #cover_slide3 h2 {
+body#index.en #cover .swiper-slide3 h2 {
   background: url(../images/frame/cover_top_pbr-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
-body#index.en #cover #cover_slide4 h2 {
+body#index.en #cover .swiper-slide4 h2 {
   background: url(../images/frame/cover_top_goto-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
-body#index.en #cover #cover_slide5 h2 {
+body#index.en #cover .swiper-slide5 h2 {
   background: url(../images/frame/cover_top_biwa-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
@@ -1531,28 +1514,34 @@ body:after {
 /*==============================================================================*/
 /*                                 Unslider css                                 */
 /*==============================================================================*/
-.cover_slider {
+.swiper-container {
+  height: 35vw;
+  width: calc(100vw - 115px);
+  min-width: 740px;
+  min-height: 300px;
+}
+
+.swiper-wrapper {
   position: relative;
-  overflow: auto;
   text-align: center;
 }
 
-.cover_slider li {
+.swiper-wrapper li {
   list-style: none;
 }
 
-.cover_slider ul li {
+.swiper-wrapper ul li {
   float: left;
 }
 
-.cover_slider .dots {
+/* .swiper-wrapper .dots {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 5px;
 }
 
-.cover_slider .dots li {
+.swiper-wrapper .dots li {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -1569,15 +1558,20 @@ body:after {
   /*			-webkit-transition: background .5s, opacity .5s;
 			-moz-transition: background .5s, opacity .5s;
 			transition: background .5s, opacity .5s;
-*/
 }
 
-.cover_slider .dots li.active {
+.swiper-wrapper .dots li.active {
   background: #fff;
-  opacity: 1;
+  opacity: 1; 
 }
+*/
 
 /* responsive */
+@media screen and (min-width: 1000px) {
+  .swiper-container {
+    height: auto;
+  }
+}
 @media screen and (min-width: 1030px) {
   #body #contents p,
   #body #contents li,
