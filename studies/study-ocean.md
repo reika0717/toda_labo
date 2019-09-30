@@ -1,10 +1,13 @@
 ---
-layout: study_children
+layout: children
+title: study
+path: '../'
 ---
 
-### I. Aquatic Ecosystems
 
-##### A) On-site research on Coastal Ecosystem at the Sagami Bay, Kanagawa
+### I. 水圏生態系の研究
+
+##### A) 相模湾における沿岸生態系の調査
 
 1. [海洋環境と植物・動物プランクトンの生物量の中・長期観測](#ocean_1-1)
 2. [有害藻類の大増殖のメカニズムの解明](#ocean_1-2)

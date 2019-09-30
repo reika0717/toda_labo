@@ -1,5 +1,7 @@
 ---
-layout: project_en
+layout: children_en
+title: project
+path: '../'
 ---
 
 ### Projects

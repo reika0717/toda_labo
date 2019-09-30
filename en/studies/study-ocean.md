@@ -1,7 +1,8 @@
 ---
-layout: study_children_en
+layout: children_en
+title: study
+path: '../../'
 ---
-
 ### I. Aquatic Ecosystems
 
 ##### A) On-site research on Coastal Ecosystem at the Sagami Bay, Kanagawa

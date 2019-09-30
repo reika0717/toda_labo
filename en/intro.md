@@ -1,5 +1,7 @@
 ---
-layout: intro_en
+layout: children_en
+title: intro
+path: '../'
 ---
 
 ### Overview
@@ -22,5 +24,5 @@ Therefore, our laboratory also studies how to properly treat wastes from human a
 
 ##### Tatsuki Toda
 
-Current Title: 
+Current Title:
 Professor, Dean, Graduate School of Engineering, Soka University

@@ -1,6 +1,9 @@
 ---
-layout: study_children
+layout: children
+title: study
+path: '../'
 ---
+
 
 ### III. 循環型社会形成に関する基盤研究
 

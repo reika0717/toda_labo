@@ -30,12 +30,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/templates/css/swiper.min.css"
+      href="{{ page.path }}assets/templates/css/swiper.min.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/templates/css/base.css"
+      href="{{ page.path }}assets/templates/css/base.css"
     />
     <link rev="made" href="" />
     <script
@@ -47,9 +47,17 @@
 
   <body id="{{ page.title }}">
     <div id="container">
-      {% include header.html %}
-      {{ content }}
-      <script src="assets/templates/js/main.js"></script>
+      {% include header.html %} {% include children_header_image.html %}
+      <div id="body">
+        {% include side_nav.html %}
+        <div id="right">
+          <div id="contents">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+      <script src="{{ page.path }}assets/templates/js/lightbox.min.js"></script>
+      <script src="{{ page.path }}assets/templates/js/main.js"></script>
     </div>
   </body>
 </html>

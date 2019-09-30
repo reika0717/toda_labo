@@ -1,5 +1,7 @@
 ---
-layout: study_en
+layout: children_en
+title: study
+path: '../'
 ---
 
 ### Topics

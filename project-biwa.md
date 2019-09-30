@@ -1,5 +1,7 @@
 ---
-layout: project
+layout: children
+title: project
+path: ''
 ---
 ### 研究プロジェクト
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-page-type="{{ page.title }}">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+      {{ page.title }} | Laboratory of Restoration Ecology, Toda Lab -Department
+      of Engineering, Soka University, Japan
+    </title>
+    <META http-equiv="Content-Type" CONTENT="text/html;charset=ISO-8859-1" 　 />
+    <META
+      name="keywords"
+      content="Tatsuki Toda,Toda,Laboratory of Restoration Ecology,Soka University,Environmental Engineering"
+    />
+    <META
+      name="description"
+      content="LRE aims to 1) elucidate aquatic ecology, 2) develop technology for environmental protection, 3) combine the knowledge to establish Sound Material Recycle Society"
+    />
+    <meta
+      name="author"
+      content="Laboratory of Restoration Ecology, Toda Lab -Department of Engineering, Soka University, Japan"
+    />
+    <meta
+      property="og:title"
+      content="Laboratory of Restoration Ecology, Toda Lab, Soka University"
+    />
+    <meta property="og:url" content="http://www.t.soka.ac.jp/~toda/en/" />
+    <meta property="og:type" content="university" />
+    <meta
+      property="og:image"
+      content="http://www.t.soka.ac.jp/~toda/assets/images/LRE-logo.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ page.path }}assets/templates/css/swiper.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ page.path }}assets/templates/css/base.css"
+    />
+    <link rev="made" href="" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body id="{{ page.title }}" class="en">
+    <div id="container">
+      {% include header_en.html %} {% include children_header_image.html %}
+      <div id="body">
+        {% include side_nav_en.html %}
+        <div id="right">
+          <div id="contents">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+      <script src="{{ page.path }}assets/templates/js/lightbox.min.js"></script>
+      <script src="{{ page.path }}assets/templates/js/main.js"></script>
+    </div>
+  </body>
+</html>

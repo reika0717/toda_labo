@@ -1,5 +1,7 @@
 ---
-layout: study
+layout: children
+title: study
+path: ''
 ---
 
 ### 研究内容

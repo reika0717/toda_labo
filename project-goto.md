@@ -1,6 +1,9 @@
 ---
-layout: project
+layout: children
+title: study
+path: ''
 ---
+
 ### 研究プロジェクト
 
 #### 長崎県新上五島町における磯焼け対策実証実験（2014年度～2016年度）

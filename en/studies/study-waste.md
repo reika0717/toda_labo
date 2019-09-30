@@ -1,7 +1,8 @@
 ---
-layout: study_children_en
+layout: children_en
+title: study
+path: '../../'
 ---
-
 ### II. Environmental Technology
 
 ##### A) Research on reducing environmental burden from human activities

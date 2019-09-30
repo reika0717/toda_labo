@@ -1,6 +1,9 @@
 ---
-layout: study_children
+layout: children
+title: study
+path: '../'
 ---
+
 
 ### II. 人間活動による環境負荷軽減に向けての研究
 

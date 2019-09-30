@@ -1,7 +1,8 @@
 ---
-layout: link_en
+layout: children_en
+title: links
+path: '../'
 ---
-
 ### Links
 
 #### Soka University

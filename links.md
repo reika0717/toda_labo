@@ -1,6 +1,9 @@
 ---
-layout: link
+layout: children
+title: links
+path: ''
 ---
+
 
 ### リンク
 

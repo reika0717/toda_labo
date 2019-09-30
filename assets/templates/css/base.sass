@@ -1,0 +1,1139 @@
+/* ----------------------- Toda Lab.CSS -----------------------
+
+/*==============================================================================
+/*                              デ　フォ　ル　ト
+/*==============================================================================
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap')
+
+*
+	margin: 0
+	padding: 0
+	border: 0px
+
+body
+	margin: 0 auto
+	padding: 0
+	font-family: "Noto Serif JP", serif
+	// font-family: 'Noto Sans JP', "sans-serif", "Arial"
+	background: linear-gradient(#81c7b8, #344a5b)
+
+img
+	border: 0px
+
+.clear
+	clear: both
+
+hr.clear
+	clear: both
+	height: 0px
+
+a
+	overflow: hidden
+	text-decoration: none
+	&:link
+		color: #2a6bb4
+	&:visited
+		color: #3d57f4
+	&:hover, &:active
+		color: #2d98dc
+		text-decoration: underline
+ul li
+	list-style-type: none
+
+table
+
+/*==============================================================================
+/*                                文　字　設　定
+/*==============================================================================
+#body
+	h3
+		color: #344a5b
+		font-family: "Noto Serif JP", serif
+		text-decoration: none
+		font-weight: 100
+		font-size: 22px
+		&:after
+			content: ""
+			display: inline-block
+			width: 100%
+			height: 1px
+			background-image: linear-gradient(to right, #344a5b, #81c7b8)
+	#contents
+		h4
+			color: #555555
+			font: normal normal bold 16px/20px
+			text-decoration: none
+		h5
+			color: #555555
+			font: normal normal bold 14px/1.2em
+			text-decoration: none
+		h6
+			color: #333333
+			font: normal normal normal 12px/1.2em
+			text-decoration: none
+		p, li
+			color: #333333
+			font: normal normal normal 12px/1.5em
+			text-decoration: none
+			font-size: 1.6vw
+		table
+			color: #333333
+			font: normal normal normal 12px/1.5em
+			text-decoration: none
+		th
+			color: #333333
+			font: normal normal bold 12px/1.5em
+			text-decoration: none
+		td
+			color: #333333
+			font: normal normal normal 12px/1.5em
+			text-decoration: none
+		dt, dd, q, blockquote
+			color: #333333
+			font: normal normal normal 12px/2em
+			text-decoration: none
+		.caption span
+			color: #2b801b
+			font: normal normal bold 12px/1.3em
+			text-decoration: none
+		.lastUD
+			color: #333333
+			text-decoration: none
+			text-align: right
+
+.en #body #contents
+	p, li, table
+		font-size: 14px
+
+#footer span
+	color: #344a5b
+	text-decoration: none
+
+body#index #contents #topics
+	th
+		color: #666666
+		text-decoration: none
+	td
+		color: #666666
+		text-decoration: none
+		font-size: 1.6vw
+
+/*==============================================================================
+/*                               コ  ン  テ  ナ
+/*==============================================================================
+
+#container
+	width: calc(100vw - 115px)
+	min-width: 740px
+	margin: 0 auto
+	background: white
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+
+#wrapper_bottom
+	padding: 8px 0 0 0
+
+#head, #cover, #footer
+	width: 100%
+	margin: 0 auto
+
+/*==============================================================================
+/*                                    #head
+/*==============================================================================
+
+#head
+	height: 76px
+	position: relative
+
+h1
+	width: 358px
+	height: 61px
+	position: absolute
+	top: 5px
+	left: 17px
+	overflow: hidden
+	a
+		display: block
+		width: 358px
+		height: 61px
+		padding-top: 61px
+		background: url(../images/frame/h1.gif) no-repeat 0 0
+
+#head #gsearch
+	width: 300px
+	position: absolute
+	top: -10px
+	right: -8px
+	overflow: hidden
+
+.gsc-control-cse
+	background-color: transparent !important
+	border-color: transparent !important
+
+#head
+	#eng
+		width: 66px
+		height: 13px
+		position: absolute
+		top: 53px
+		right: 23px
+		overflow: hidden
+		a
+			display: block
+			width: 66px
+			height: 13px
+			background: url(../images/frame/button_eng.gif) no-repeat 0 0
+			padding-top: 13px
+			&:hover
+				background: url(../images/frame/button_eng.gif) no-repeat 0 -13px
+	#ja
+		width: 80px
+		height: 13px
+		position: absolute
+		top: 53px
+		right: 23px
+		overflow: hidden
+		a
+			display: block
+			width: 80px
+			height: 13px
+			background: url(../images/frame/button_ja.png) no-repeat 0 0
+			padding-top: 13px
+			&:hover
+				background: url(../images/frame/button_ja.png) no-repeat 0 -13px
+
+/*==============================================================================
+/*                                    #cover
+/*==============================================================================
+
+#cover
+	margin-bottom: 45px
+	h2
+		width: 100%
+		text-indent: -1000em
+		background: url(../images/frame/cover_second.jpg) no-repeat center
+		background-size: cover
+		height: 119px
+
+/*==============================================================================
+/*                                    #body
+/*==============================================================================
+
+#body
+	width: 100%
+	display: flex
+	padding: 0 19px 0 19px
+	margin: 0 auto
+	margin-bottom: 25px
+
+/*==============================================================================
+/*                                    #left
+/*==============================================================================*/
+
+.menu_for_sp
+	display: none
+#left
+	margin-right: 10px
+	padding-bottom: 55px
+	#main_menu
+		width: 178px
+		margin: 2px 0 30px 20px
+		li.global_nav
+			width: 178px
+			&.active
+				a
+					color: #344a5b
+					font-weight: bold
+			> .study_children,
+			> .member_children,
+			> .project_children
+				display: none
+				> .child_nav
+					list-style-type: upper-roman
+					margin-left: 22px
+					> a
+						font-size: 14px
+						line-height: 26px
+			&.member.active
+				.member_children
+					display: block
+			&.study.active
+				.study_children
+					display: block
+			&.project.active
+				.project_children
+					display: block
+			a
+				display: block
+				width: 178px
+				color: rgba(0, 0, 0, 0.4)
+				font-size: 16px
+				line-height: 34px
+				&:before
+					font-family: 'Font Awesome 5 Free'
+					display: inline-block
+					margin-right: 9px
+			&.index
+				> a
+					&:before
+						content: '\f015'
+			&.intro
+				> a
+					&:before
+						content: '\f1ad'
+			&.study
+				> a
+					&:before
+						content: '\f0c3'
+			&.project
+				> a
+					&:before
+						content: '\f002'
+			&.achievement
+				> a
+					&:before
+						content: '\f249'
+			&.member
+				> a
+					&:before
+						content: '\f007'
+			&.links
+				> a
+					&:before
+						content: '\f0c1'
+
+#left
+	.logobox
+		img
+			height: 100px
+			width: 100px
+			margin-left: 26px
+			width: 100px
+			padding: 0 10px 0 10px
+		.logocaption
+			text-align: center
+			font: normal normal bold 12px/1.3em
+			text-decoration: none
+	div.fblb-container
+		/* background: url("../images/frame/FacebookHeader2.png") no-repeat center top; */
+		margin: 10px 0 0 -19px
+	.fb-border-bottom
+		border-top: 1px solid #d8dfea
+		margin-left: -13px
+		width: 197px
+
+/* #left div.fblb-container::before { content: url("../images/frame/facebook.png"); width:207px; height:70px; }
+
+// ==============================================================================
+//                                     #right
+// ==============================================================================
+
+#right
+	width: calc(100% - 266px)
+	margin-left: 10px
+	h3
+		width: 100%
+		height: 28px
+		margin: 2px 0 30px 0
+
+/*==============================================================================
+/*                                #contents
+/*==============================================================================
+
+#contents
+	margin: 0 10px 5px 10px
+	h4
+		width: 100%
+		margin-bottom: 18px
+		margin-top: 30px
+		display: flex
+		align-items: center
+		&:before
+			content: ""
+			width: 6px
+			height: 25px
+			margin-right: 7px
+			background: #81c7b8
+			display: inline-block
+		&.height3
+			width: 464px
+			text-indent: 0em
+			padding-left: 25px
+			background: url(../images/frame/h4_height3.gif) no-repeat 0 0
+	h5
+		margin: 20px 0 10px 0
+	h6
+		margin: 0 0 8px 19px
+	#spacer
+		margin: 0 0 30px
+	.imgLeft
+		float: left
+		margin: 0 10px 10px 0
+	.imgRight
+		float: right
+		margin: 0 0 10px 10px
+	.imgCenter
+		margin-bottom: 30px
+		img
+			display: block
+			margin: 0 auto
+	img
+		border: solid 1px #666
+		margin: 18px 0
+	figcaption
+		color: #2b801b
+		font: normal normal bold 12px/1.3em
+		text-decoration: none
+		margin-top: -10px
+	.imageholder
+		margin: 0 auto
+		width: 454px
+		padding: 10px 0 10px 0
+	.imagebox
+		text-align: -webkit-center
+		img
+			display: block
+			margin: 2px
+		.caption
+			margin-left: 0 !important
+			margin-bottom: 0
+			max-width: 454px
+	.vertical
+		margin: 0 20px 0 20px
+	.floatleft
+		float: left
+	.floatright
+		float: right
+	.caption
+		text-align: center
+		margin-top: 5px
+		margin-left: 0px
+
+/*==========================基本設定=============================
+
+/*==========================画像配置============================
+
+.w100
+	width: 100px
+
+.w130
+	width: 130px
+
+.w160
+	width: 160px
+
+.w200
+	width: 200px
+
+.w221
+	width: 221px
+
+.w300
+	width: 300px
+
+.w454
+	width: 454px
+
+/*=========================テーブル設定==========================
+
+#contents table
+	border-collapse: collapse
+	width: 100%
+	word-break: break-word
+	th
+		background-color: #b4e7a9
+		border: solid 1px #444
+		vertical-align: top
+	td
+		border: solid 1px #444
+		vertical-align: top
+	&.noborder
+		th, td
+			border: 0
+			padding: 5px
+			vertical-align: top
+			background-color: transparent
+
+/*=========================リスト設定==========================
+
+#body #contents
+	ol, ul
+		margin: 10px 0 30px 0px
+
+#contents ul
+	li
+		list-style-type: disc
+		text-indent: 0.2em
+		margin: 5px 0 0 15px
+		p:nth-of-type(1)
+			color: rgb(85, 85, 85)
+			font: bold 14px/1.2em  !important
+			text-decoration: none
+	ul
+		margin: 0 0 0 2em
+		li
+			list-style-type: circle
+			text-indent: -1em
+			margin: 10px 0 10px 0
+
+#body #contents
+	ol li
+		margin: 5px 0 0 15px
+	ul ol li
+		list-style-type: decimal
+
+/*=========================ページトップへ==========================
+
+#contents .goTop
+	width: 106px
+	height: 12px
+	overflow: hidden
+	margin-bottom: 30px
+	margin-left: 380px
+	a
+		display: block
+		width: 106px
+		height: 12px
+		padding-top: 12px
+		background: url(../images/frame/goTop.gif) no-repeat 0 0
+		&:hover
+			background: url(../images/frame/goTop.gif) no-repeat 0 -12px
+
+.en #contents .goTop a
+	background: url(../images/frame/goTop-en.jpg) no-repeat 0 0
+	&:hover
+		background: url(../images/frame/goTop-en.jpg) no-repeat 0 -12px
+
+/*==============================================================================
+/*                                  #pre-footer
+/*==============================================================================
+
+#pre-footer
+	width: 798px
+	margin: 0 auto
+	padding-left: 18px
+
+/*==============================================================================
+/*                                  #footer
+/*==============================================================================
+
+#footer
+	padding-top: 3px
+	text-align: right
+	#info
+		a
+			color: #344a5b
+	#copyright
+		margin-right: 19px
+
+/*==============================================================================
+/*                                   #index
+/*==============================================================================
+
+body#index #cover
+	margin-bottom: 36px
+	position: relative
+	.main_text_wrapper
+		font-family: serif
+		color: #fff
+		position: absolute
+		right: 0
+		bottom: 0
+		z-index: 3
+		width: 100%
+		text-align: right
+		margin-bottom: 8px
+		> .main_text
+			font-size: 40px
+			display: block
+			border-bottom: 1px solid #fff
+			line-height: 43px
+			padding-bottom: 8px
+			padding-right: 20px
+		> .sub_text
+			font-size: 16px
+			padding-right: 24px
+	h2
+		width: 100%
+		height: 35vw
+	.swiper-slide img
+		width: 100%
+		min-width: 740px
+
+.swiper-pagination-bullet
+	background-color: rgba(255, 255, 255, 0.5)
+
+.swiper-pagination-bullet-active
+	background-color: #fff
+
+body
+	&#index
+		&.en #cover
+			.swiper-slide1 h2
+				background: url(../images/frame/cover_top.jpg) no-repeat 0 0
+				background-size: cover
+				text-indent: -1000em
+			.swiper-slide2 h2
+				background: url(../images/frame/cover_top_ocean-en.jpg) no-repeat 0 0
+				background-size: cover
+				text-indent: -1000em
+			.swiper-slide3 h2
+				background: url(../images/frame/cover_top_pbr-en.jpg) no-repeat 0 0
+				background-size: cover
+				text-indent: -1000em
+			.swiper-slide4 h2
+				background: url(../images/frame/cover_top_goto-en.jpg) no-repeat 0 0
+				background-size: cover
+				text-indent: -1000em
+			.swiper-slide5 h2
+				background: url(../images/frame/cover_top_biwa-en.jpg) no-repeat 0 0
+				background-size: cover
+				text-indent: -1000em
+		#left
+		#right h3
+			height: 22px
+			width: 100%
+			margin-bottom: 20px
+			color: #344a5b
+		#contents
+			table#topics
+				margin: 0
+				width: 100%
+				th, td
+					border: 0
+					padding: 7px 7px 7px 0px
+					vertical-align: top
+					background-color: transparent
+					line-height: 1.3em
+					font-size: 14px
+				th
+					width: 66px
+					text-align: left
+			.read_more
+				display: block
+				text-align: right
+				font-size: 12px
+			.fb-container
+				height: 710px
+				width: 100%
+				overflow: hidden
+	&#news #contents table#topics
+		th, td
+			border: 0
+			vertical-align: top
+			background-color: transparent
+			padding-bottom: 10px
+		th
+			width: 44px
+			text-align: left
+			padding-right: 20px
+	&.en h1
+		width: 555px
+		height: 61px
+		position: absolute
+		top: 5px
+		left: 17px
+		overflow: hidden
+		a
+			display: block
+			width: 555px
+			height: 61px
+			padding-top: 61px
+			background: url(../images/frame/h1en.png) no-repeat 0 0
+	&#index-eng
+		#wrapper_bottom
+			padding-bottom: 48px
+			background: url(../images/frame/bg_wrapper_contruct.gif) no-repeat 0 0
+			background-position: bottom
+		#cover
+			height: 278px
+			margin-bottom: 0
+			h2
+				height: 278px
+				background: url(../images/frame/cover_contruct.jpg) no-repeat 0 0
+		#footer
+			background: url(../images/frame/bg_footer_contruct.jpg) no-repeat 0 0
+	&#biogeocenosis #contents
+		.imgCenter
+			margin-bottom: 30px
+		h4
+			margin-top: 40px
+	&#study h3
+		&#study-ocean
+			background: url(../images/frame/h3_studies.png) no-repeat 0 0
+			margin-bottom: 20px
+		&#study-waste
+			background: url(../images/frame/h3_studies.png) no-repeat 0 -28px
+			margin-bottom: 20px
+		&#study-recycle
+			background: url(../images/frame/h3_studies.png) no-repeat 0 -56px
+			margin-bottom: 20px
+
+/*==============================================================================
+/*                                 #News
+/*==============================================================================
+/*NEW XXXXXXX
+body#news #contents table#topics th,
+body#news #contents table#topics td
+	border: 0
+	vertical-align: top
+	background-color: transparent
+	padding-bottom: 10px
+
+body#news #contents table#topics th
+	width: 66px
+	text-align: left
+	padding-right: 20px
+
+/*==============================================================================
+/*                                 #English
+/*==============================================================================
+
+/*==============================================================================
+/*                                 #biogeocenosis
+/*==============================================================================
+
+/*==============================================================================
+/*                                 #study
+/*==============================================================================
+
+#study #contents h4
+	color: #555555
+
+body#study #contents #theme
+	p
+		margin-bottom: 0
+	li
+		list-style-type: none
+	ol li
+		list-style-type: decimal
+		margin-left: 30px
+
+/*==============================================================================
+/*                                 #project
+/*==============================================================================
+
+#project p
+	margin-bottom: 1em
+
+/*==============================================================================
+/*                                 #intro
+/*==============================================================================
+
+#intro
+	p
+		margin-bottom: 1em
+	.profname
+		color: #000000
+		font: bold normal normal 1em
+		text-decoration: none
+		margin-left: 35px
+
+/*==============================================================================
+/*                                 #recyclable-society
+/*==============================================================================
+
+body
+	&#recyclable-society #contents
+		.imgCenter
+			margin-bottom: 30px
+		h4
+			margin-top: 40px
+	&#achievement #contents
+		li
+			font-family: "Times New Roman"
+			word-break: break-all
+			span.prof
+				font-weight: bold
+			span.italic
+				font-style: italic
+			.article
+				padding-left: 10px
+		.YearDiv
+			margin-top: 1em
+			margin-left: -20px
+			font-size: 20px
+
+/*==============================================================================
+/*                                 #achievement
+/*==============================================================================
+
+/*==============================================================================
+/*                                 #obog
+/*==============================================================================
+
+#obog #contents
+	td p
+		margin: 0
+	table
+		width: 469px
+
+#active_member #contents table
+	width: 469px
+
+/*==============================================================================
+/*                                 LightboxCSS
+/*==============================================================================
+
+/* Preload images
+
+body:after
+	content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png)
+	display: none
+
+.lightboxOverlay
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 9999
+	background-color: black
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80)
+	opacity: 0.8
+	display: none
+
+.lightbox
+	position: absolute
+	left: 0
+	width: 100%
+	z-index: 10000
+	text-align: center
+	line-height: 0
+	font-weight: normal
+	.lb-image
+		display: block
+		height: auto
+		max-width: inherit
+		-webkit-border-radius: 3px
+		-moz-border-radius: 3px
+		-ms-border-radius: 3px
+		-o-border-radius: 3px
+		border-radius: 3px
+	a img
+		border: none
+
+.lb-outerContainer
+	position: relative
+	background-color: white
+	display: inline-block
+	*zoom: 1
+		width: 250px
+		height: 250px
+		margin: 0 auto
+		-webkit-border-radius: 4px
+		-moz-border-radius: 4px
+		-ms-border-radius: 4px
+		-o-border-radius: 4px
+		border-radius: 4px
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+.lb-container
+	padding: 4px
+
+.lb-loader
+	position: absolute
+	top: 43%
+	left: 0
+	height: 25%
+	width: 100%
+	text-align: center
+	line-height: 0
+
+.lb-cancel
+	display: block
+	width: 32px
+	height: 32px
+	margin: 0 auto
+	background: url(../images/loading.gif) no-repeat
+
+.lb-nav
+	position: absolute
+	top: 0
+	left: 0
+	height: 100%
+	width: 100%
+	z-index: 10
+
+.lb-container > .nav
+	left: 0
+
+.lb-nav a
+	outline: none
+	background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==")
+
+.lb-prev, .lb-next
+	height: 100%
+	cursor: pointer
+	display: block
+
+.lb-nav a
+	&.lb-prev
+		width: 34%
+		left: 0
+		float: left
+		background: url(../images/prev.png) left 48% no-repeat
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)
+		opacity: 0
+		-webkit-transition: opacity 0.6s
+		-moz-transition: opacity 0.6s
+		-o-transition: opacity 0.6s
+		transition: opacity 0.6s
+		&:hover
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+			opacity: 1
+	&.lb-next
+		width: 64%
+		right: 0
+		float: right
+		background: url(../images/next.png) right 48% no-repeat
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)
+		opacity: 0
+		-webkit-transition: opacity 0.6s
+		-moz-transition: opacity 0.6s
+		-o-transition: opacity 0.6s
+		transition: opacity 0.6s
+		&:hover
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+			opacity: 1
+
+.lb-dataContainer
+	margin: 0 auto
+	padding-top: 5px
+	*zoom: 1
+		width: 100%
+		-moz-border-radius-bottomleft: 4px
+		-webkit-border-bottom-left-radius: 4px
+		border-bottom-left-radius: 4px
+		-moz-border-radius-bottomright: 4px
+		-webkit-border-bottom-right-radius: 4px
+		border-bottom-right-radius: 4px
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+.lb-data
+	padding: 0 4px
+	color: #ccc
+	.lb-details
+		width: 85%
+		float: left
+		text-align: left
+		line-height: 1.1em
+	.lb-caption
+		font-size: 13px
+		font-weight: bold
+		line-height: 1em
+	.lb-number
+		display: block
+		clear: left
+		padding-bottom: 1em
+		font-size: 12px
+		color: #999999
+	.lb-close
+		display: block
+		float: right
+		width: 30px
+		height: 30px
+		background: url(../images/close.png) top right no-repeat
+		text-align: right
+		outline: none
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70)
+		opacity: 0.7
+		-webkit-transition: opacity 0.2s
+		-moz-transition: opacity 0.2s
+		-o-transition: opacity 0.2s
+		transition: opacity 0.2s
+		&:hover
+			cursor: pointer
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+			opacity: 1
+
+/*==============================================================================
+/*                                 Unslider css
+/*==============================================================================
+
+.swiper-container
+	height: 35vw
+	width: calc(100vw - 115px)
+	min-width: 740px
+	min-height: 300px
+
+.swiper-wrapper
+	position: relative
+	text-align: center
+	li
+		list-style: none
+	ul li
+		float: left
+
+/* .swiper-wrapper .dots {
+ *  position: absolute;
+ *  left: 0;
+ *  right: 0;
+ *  bottom: 5px;
+ *}
+ *
+ *.swiper-wrapper .dots li {
+ *  display: inline-block;
+ *  width: 10px;
+ *  height: 10px;
+ *  margin: 0 2px;
+ *
+ *  text-indent: -999em;
+ *
+ *  border: 2px solid #fff;
+ *  border-radius: 0px;
+ *
+ *  cursor: pointer;
+ *  opacity: 0.4;
+ *
+ *  /*			-webkit-transition: background .5s, opacity .5s;
+ *			-moz-transition: background .5s, opacity .5s;
+ *			transition: background .5s, opacity .5s;
+ *}
+ *
+ *.swiper-wrapper .dots li.active {
+ *  background: #fff;
+ *  opacity: 1; 
+ *}
+
+/* responsive
+@media screen and (min-width: 1000px)
+	.swiper-container
+		height: auto
+	body#index
+		#cover
+			.main_text_wrapper
+				> .main_text
+					padding-right: 100px
+				> .sub_text
+					padding-right: 100px
+
+@media screen and (min-width: 1030px)
+	#body #contents
+		p, li
+			font-size: 16px
+	body#index #contents #topics td
+		font-size: 14px
+
+@media screen and (max-width: 875px)
+	#body #contents
+		p, li
+			font-size: 14px
+	body#index #contents #topics td
+		font-size: 14px
+
+@media screen and (max-width: 480px)
+	#body
+		padding: 0
+		width: calc(100vw - 30px)
+	body#achievement #contents .YearDiv
+		margin-left: 0
+	#container
+		width: 100vw
+		min-width: auto
+		padding-top: 41px
+		> #head
+			height: 52px
+			position: fixed
+			top: 0
+			background: #fff
+			> h1
+				width: auto
+				height: auto
+				> a
+					width: 50vw
+					background-size: 100%
+			> #gsearch
+				display: none
+			> #eng
+				top: 16px
+				right: 54px
+		#wrapper_top
+			#wrapper_bottom
+				#cover
+					.main_text_wrapper
+						> .main_text
+							font-size: 22px
+							line-height: 25px
+							padding-bottom: 4px
+						> .sub_text
+							font-size: 12px
+					.swiper-container
+						width: 100vw
+						min-width: auto
+						height: auto
+						min-height: auto
+						.swiper-wrapper
+							.swiper-slide
+								img
+									min-width: auto
+						.swiper-pagination
+							display: none
+
+	.sp_nav_bg
+		display: none
+		width: 100vw
+		height: 100vh
+		position: fixed
+		top: 0px
+		left: 0
+		z-index: 1
+		&.on
+			display: block
+	.menu_for_sp
+		font-family: sans-serif
+		color: 
+		display: block
+		position: fixed
+		top: 12.5px
+		right: 13px
+		color: #00479d
+		font-size: 18px
+		&::before
+			font-family: 'Font Awesome 5 Free'
+			display: inline-block
+			margin-right: 4px
+			content: '\f03a'
+	#left
+		display: none
+		position: absolute
+		top: 36px
+		z-index: 110
+		right: 0
+		background: #fff
+		padding-top: 8px
+		padding-bottom: 30px
+		box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2)
+		&.on
+			display: block
+		> #main_menu
+			margin: 2px 0 14px 20px
+			li.global_nav
+				&.active
+					a
+						width: 100%
+		> .logobox
+			img
+				padding: 0
+				height: auto
+				margin-left: 18px
+				width: 56px
+	#right
+		width: calc(100vw - 30px)
+		margin-left: 0
+		> #contents
+			margin: 0
+			img
+				width: calc(100vw - 30px)
+			> .fb-container
+				width: calc(100% - 30px)
+				iframe
+					width: auto !important			
+	#pre-footer
+		width: 100vw
+		margin: 0
+		padding: 0
+		overflow: hidden

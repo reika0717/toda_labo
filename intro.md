@@ -1,5 +1,7 @@
 ---
-layout: intro
+layout: children
+title: intro
+path: ''
 ---
 
 ### 研究室紹介

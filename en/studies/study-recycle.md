@@ -1,5 +1,7 @@
 ---
-layout: study_children_en
+layout: children_en
+title: study
+path: '../../'
 ---
 
 ### III. Recycling Society
