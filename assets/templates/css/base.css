@@ -369,7 +369,7 @@ h1 a {
 }
 
 #left #main_menu li.global_nav a:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'FontAwesome';
   font-weight: 400;
   display: inline-block;
   margin-right: 9px;
@@ -1422,7 +1422,7 @@ body:after {
     z-index: 101;
   }
   .menu_for_sp::before {
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'FontAwesome';
     font-weight: 400;
     display: inline-block;
     margin-right: 4px;
