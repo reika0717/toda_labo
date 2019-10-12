@@ -60,12 +60,12 @@ $(function() {
   script.setAttribute("content", "width=device-width, initial-scale=1.0");
   document.head.appendChild(script);
 
-  var script_fontawesome = document.createElement("script");
-  script_fontawesome.setAttribute(
-    "src",
-    "https://kit.fontawesome.com/04e6437977.js"
-  );
-  document.head.appendChild(script_fontawesome);
+  // var script_fontawesome = document.createElement("script");
+  // script_fontawesome.setAttribute(
+  //   "src",
+  //   "https://kit.fontawesome.com/04e6437977.js"
+  // );
+  // document.head.appendChild(script_fontawesome);
 
   var initialize = {
     index: function() {
