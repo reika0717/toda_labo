@@ -369,7 +369,8 @@ h1 a {
 }
 
 #left #main_menu li.global_nav a:before {
-  font-family: 'fontawesome';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
   display: inline-block;
   margin-right: 9px;
 }
@@ -499,6 +500,13 @@ h1 a {
 #contents .imgCenter img {
   display: block;
   margin: 0 auto;
+}
+
+#contents .multiple_figure_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 #contents img {
@@ -1414,7 +1422,8 @@ body:after {
     z-index: 101;
   }
   .menu_for_sp::before {
-    font-family: 'fontawesome';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
     display: inline-block;
     margin-right: 4px;
     content: '\f03a';
@@ -1452,8 +1461,11 @@ body:after {
   #right > #contents {
     margin: 0;
   }
+  #right > #contents .multiple_figure_wrapper {
+    justify-content: flex-start;
+  }
   #right > #contents img {
-    width: calc(100vw - 30px);
+    width: calc(100vw - 30px) !important;
   }
   #right > #contents > .fb-container {
     width: calc(100% - 30px) !important;

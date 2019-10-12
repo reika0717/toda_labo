@@ -29,7 +29,7 @@ The Science and Technology Research Partnership for Sustainable Development (SAT
 
 Click [here](http://cosmos-satreps.org/) to see more details.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="../assets/images/overview_cosmos.jpg" description="A summarized figure of the system this project aims to establish. " wrapper_style="margin-right: 10px;"%}
 {% include image.html url="../assets/images/COSMOS logo.jpg" description=" The project's logo symbolizing cooperation between Japan and Malaysia." wrapper_style="width: 101px;"%}
 </div>
@@ -41,7 +41,7 @@ In recent years, the excessive growth of freshwater aquatic weeds has become the
 
 Click [here](./project-biwa.html) to see more details.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="../assets/images/biwa-proposal.jpg" description="Ultimate goal of our research project, which is the formation of Modern 'lake-oriented recycling and symbiotic society'." style="width: 282px;" wrapper_style="width: 282px; margin-right: 10px;"%}
 {% include image.html url="../assets/images/biwa-wash.jpg" description="Washing and selection of harvested aquatic weeds for our experiments. It was a tough work." style="width: 162px;" wrapper_style="width: 162px;"%}
 </div>

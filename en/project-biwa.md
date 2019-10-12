@@ -7,7 +7,7 @@ layout: project_en
 
 ##### Novel lake ecosystem management by sustainable harvesting and effective utilization of aquatic weed biomass
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="../assets/images/biwa-gengoro.jpg" description="Aquatic weed harvester owned by Shiga prefecture 'Gengoro'. It's running every day during summer. " wrapper_style="margin-right: 10px; width: 200px;" style="width: 200px;"%}
 {% include image.html url="../assets/images/biwa-dry.jpg" description="Harvested weeds are piled up on fishery harbors. After few days of sun-drying, aquatic weeds are brought to incineration plant or dumpsite." wrapper_style="width: 200px;" style="width: 200px;"%}
 </div>
@@ -24,7 +24,7 @@ In the past, harvested aquatic weeds have traditionally been utilized for fertil
 
 By establishing "lake ecosystem management standard" and "effective utilization (technology) of aquatic weed biomass", we approach toward the solution of aquatic weed issue.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="../assets/images/biwa-proposal-en.png" description="Ultimate goal of our research project, which is the formation of Modern 'lake-oriented recycling and symbiotic society'." style="height: 213px;" wrapper_style="width: 286px; margin-right: 10px"%}
 {% include image.html url="../assets/images/biwa-wash.jpg" description="Washing and selection of harvested aquatic weeds for our experiments. It was a tough work." style="height: 213px;" wrapper_style="width: 165px"%}
 </div>

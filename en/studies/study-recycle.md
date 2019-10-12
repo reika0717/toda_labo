@@ -13,7 +13,7 @@ In recent years, the excessive growth of freshwater aquatic weeds has become the
 
 Click [here](../project-biwa.html)to see more details.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="../../assets/images/biwa-proposal.jpg" description="Ultimate goal of our research project, which is the formation of Modern 'lake-oriented recycling and symbiotic society '" wrapper_style="margin-right: 10px; width: 282px;" style="width: 282px;"%}
 {% include image.html url="../../assets/images/biwa-wash.jpg" description="Washing and selection of harvested aquatic weeds for our experiments. It was a tough work." wrapper_style="width: 162px;" style="width: 162px;"%}
 </div>

@@ -9,7 +9,7 @@ path: ''
 
 ##### 「水草バイオマスの持続可能な収穫と利活用による湖沼生態系保全技術の確立」
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="./assets/images/biwa-gengoro.jpg" description="滋賀県が所有する水草刈取り船「げんごろう」。夏場は毎日出動しています" wrapper_style="margin-right: 10px; width: 200px;" style="width: 200px;"%}
 {% include image.html url="./assets/images/biwa-dry.jpg" description="漁師さんが刈り取った水草は漁港に積み上げられ、数日間天日干しした後、トラックで処分場へと運ばれます" wrapper_style="width: 200px;" style="width: 200px;"%}
 </div>
@@ -24,7 +24,7 @@ path: ''
 
 除去された水草については、過去には肥料として農地利用されていましたが、現在では利用先がなく、主に焼却処理されています。水草バイオマスの再資源化についてはバイオエタノール化が検討されてきましたが、エネルギー回収効率や費用の観点から未だ社会実装化には至っていません。最も安価な処理方法はメタン発酵によるバイオガス化であると考えられますが、これまでは基質中の炭素分からのエネルギー回収のみが注目されてきました。そこで本プロジェクトでは、バイオガス化の高効率化に加えてN、P、Kなどの栄養塩を積極的に循環利用し、豊富に栄養塩を含む液分残渣を微細藻類の培養に有効活用する基盤技術を確立することを目的としています。即ち、湖沼生態系の保全と水草バイオマスの利活用を両立させることで水草問題の解決を目指します。
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="./assets/images/biwa-proposal.jpg" description="本プロジェクトが目指す「現代版里湖循環型・自然共生社会」の概略図" style="height: 213px;" wrapper_style="width: 286px; margin-right: 10px"%}
 {% include image.html url="./assets/images/biwa-wash.jpg" description="実験用に採取した水草の洗浄、選別作業。ものすごい量です。" style="height: 213px;" wrapper_style="width: 165px"%}
 </div>

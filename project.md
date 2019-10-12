@@ -25,8 +25,7 @@ path: ''
 SATREPS “地球規模課題対応国際科学技術協力プログラム”は、科学技術振興機構 (JST)と国際協力機構 (JICA)が連携して実施する事業です。本事業の一環である COSMOS プロジェクトは、日本とマレーシアの７つの研究機関で“微細藻類の大量培養技術の確立による持続可能な熱帯水産資源生産システムの構築”を目指します。プロジェクトを通して、開発途上国の自立的研究開発能力の向上と課題解決に資する持続的活動基盤の形成を図ります。
 
 詳細については[こちら](http://cosmos-satreps.org/)を御覧ください。
-
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="assets/images/overview_cosmos.jpg" description="本プロジェクトが目指すシステムの概略図" wrapper_style="margin-right: 10px;"%}
 {% include image.html url="assets/images/COSMOS logo.jpg" description="日本とマレーシアの協力を表すプロジェクトのロゴ" wrapper_style="width: 101px;"%}
 </div>
@@ -38,7 +37,7 @@ SATREPS “地球規模課題対応国際科学技術協力プログラム”は
 
 詳細については[こちら](./project-biwa.html)を御覧ください。
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+<div class="multiple_figure_wrapper">
 {% include image.html url="assets/images/biwa-proposal.jpg" description="本プロジェクトが目指す「現代版里湖循環型・自然共生社会」の概略図" style="width: 282px;" wrapper_style="width: 282px; margin-right: 10px;"%}
 {% include image.html url="assets/images/biwa-wash.jpg" description="実験用に採取した水草の洗浄、選別作業。ものすごい量です。" style="width: 162px;" wrapper_style="width: 162px;"%}
 </div>
