@@ -3,7 +3,6 @@
 /*============================================================================== */
 /*                              デ　フォ　ル　ト */
 /*============================================================================== */
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,7 @@
 body {
   margin: 0 auto;
   padding: 0;
-  font-family: "Noto Serif JP", serif;
+  font-family: "メイリオ", sans-serif;
   background: linear-gradient(#81c7b8, #344a5b);
 }
 
@@ -59,7 +58,7 @@ ul li {
   color: #344a5b;
   font-family: "Noto Serif JP", serif;
   text-decoration: none;
-  font-weight: 100;
+  font-weight: 600;
   font-size: 22px;
 }
 
@@ -299,9 +298,27 @@ h1 a {
   width: 178px;
 }
 
-#left #main_menu li.global_nav.active a {
+#left #main_menu li.global_nav.active > a {
   color: #344a5b;
   font-weight: bold;
+  position: relative;
+  display: inline;
+  z-index: 1;
+}
+
+#left #main_menu li.global_nav.active > a::after {
+  content: '';
+  width: calc(100% + 19px);
+  height: 12px;
+  z-index: -1;
+  position: absolute;
+  left: -9px;
+  bottom: -5px;
+  background: rgba(129, 199, 184, 0.4);
+}
+
+#left #main_menu li.global_nav.active > a a {
+  color: #344a5b;
 }
 
 #left #main_menu li.global_nav > .study_children,
@@ -322,6 +339,13 @@ h1 a {
 #left #main_menu li.global_nav > .project_children > .child_nav > a {
   font-size: 14px;
   line-height: 26px;
+}
+
+#left #main_menu li.global_nav > .study_children.active > .child_nav > a,
+#left #main_menu li.global_nav > .member_children.active > .child_nav > a,
+#left #main_menu li.global_nav > .project_children.active > .child_nav > a {
+  color: #344a5b;
+  font-weight: bold;
 }
 
 #left #main_menu li.global_nav.member.active .member_children {
@@ -941,6 +965,27 @@ body#recyclable-society #contents h4 {
   margin-top: 40px;
 }
 
+body#achievement #contents ul.paper_meta_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body#achievement #contents ul.paper_meta_wrapper > li {
+  list-style: none;
+  margin-left: 0px;
+}
+
+body#achievement #contents ul.paper_meta_wrapper > li:nth-of-type(1) {
+  margin-left: 0;
+}
+
+body#achievement #contents ul.paper_meta_wrapper > li::after {
+  content: '/';
+  font-size: 17px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 body#achievement #contents li {
   font-family: "Times New Roman";
   word-break: break-all;
@@ -1251,14 +1296,23 @@ body:after {
  *  opacity: 1;
  *} */
 /* responsive */
+@media screen and (min-width: 1200px) {
+  body#index #right #contents {
+    display: flex;
+  }
+  body#index #right #contents .fb-container {
+    margin-left: 20px;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .swiper-container {
     height: auto;
   }
-  body#index #cover .main_text_wrapper > .main_text {
+  body#index #cover .main_text_wrapper .main_text {
     padding-right: 100px;
   }
-  body#index #cover .main_text_wrapper > .sub_text {
+  body#index #cover .main_text_wrapper .sub_text {
     padding-right: 100px;
   }
 }
@@ -1299,6 +1353,7 @@ body:after {
     position: fixed;
     top: 0;
     background: #fff;
+    z-index: 100;
   }
   #container > #head > h1 {
     width: auto;
@@ -1311,7 +1366,8 @@ body:after {
   #container > #head > #gsearch {
     display: none;
   }
-  #container > #head > #eng {
+  #container > #head > #eng,
+  #container > #head > #ja {
     top: 16px;
     right: 54px;
   }
@@ -1355,6 +1411,7 @@ body:after {
     right: 13px;
     color: #00479d;
     font-size: 18px;
+    z-index: 101;
   }
   .menu_for_sp::before {
     font-family: 'Font Awesome 5 Free';
@@ -1364,7 +1421,7 @@ body:after {
   }
   #left {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 36px;
     z-index: 110;
     right: 0;
@@ -1399,7 +1456,7 @@ body:after {
     width: calc(100vw - 30px);
   }
   #right > #contents > .fb-container {
-    width: calc(100% - 30px);
+    width: calc(100% - 30px) !important;
   }
   #right > #contents > .fb-container iframe {
     width: auto !important;

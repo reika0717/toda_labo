@@ -3,7 +3,6 @@
 /*==============================================================================
 /*                              デ　フォ　ル　ト
 /*==============================================================================
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap')
 
 *
 	margin: 0
@@ -13,7 +12,7 @@
 body
 	margin: 0 auto
 	padding: 0
-	font-family: "Noto Serif JP", serif
+	font-family: "メイリオ", sans-serif
 	// font-family: 'Noto Sans JP', "sans-serif", "Arial"
 	background: linear-gradient(#81c7b8, #344a5b)
 
@@ -50,7 +49,7 @@ table
 		color: #344a5b
 		font-family: "Noto Serif JP", serif
 		text-decoration: none
-		font-weight: 100
+		font-weight: 600
 		font-size: 22px
 		&:after
 			content: ""
@@ -240,9 +239,23 @@ h1
 		li.global_nav
 			width: 178px
 			&.active
-				a
+				> a
 					color: #344a5b
 					font-weight: bold
+					position: relative
+					display: inline
+					z-index: 1
+					&::after
+						content: ''
+						width: calc(100% + 19px)
+						height: 12px
+						z-index: -1
+						position: absolute
+						left: -9px
+						bottom: -5px
+						background: rgba(129, 199, 184, 0.4)
+					a
+						color: #344a5b
 			> .study_children,
 			> .member_children,
 			> .project_children
@@ -253,6 +266,11 @@ h1
 					> a
 						font-size: 14px
 						line-height: 26px
+				&.active
+					> .child_nav
+						> a
+							color: #344a5b
+							font-weight: bold
 			&.member.active
 				.member_children
 					display: block
@@ -739,6 +757,19 @@ body
 		h4
 			margin-top: 40px
 	&#achievement #contents
+		ul.paper_meta_wrapper
+			display: flex
+			flex-wrap: wrap
+			> li
+				list-style: none
+				margin-left: 0px
+				&:nth-of-type(1)
+					margin-left: 0
+				&::after
+					content: '/'
+					font-size: 17px
+					margin-left: 10px
+					margin-right: 10px
 		li
 			font-family: "Times New Roman"
 			word-break: break-all
@@ -1000,16 +1031,26 @@ body:after
  *}
 
 /* responsive
+@media screen and (min-width: 1200px)
+	body#index
+		#right
+			#contents
+				display: flex
+				.news-container
+				.fb-container
+					margin-left: 20px
 @media screen and (min-width: 1000px)
 	.swiper-container
 		height: auto
 	body#index
 		#cover
 			.main_text_wrapper
-				> .main_text
+				.main_text
 					padding-right: 100px
-				> .sub_text
+				.sub_text
 					padding-right: 100px
+
+
 
 @media screen and (min-width: 1030px)
 	#body #contents
@@ -1040,6 +1081,7 @@ body:after
 			position: fixed
 			top: 0
 			background: #fff
+			z-index: 100
 			> h1
 				width: auto
 				height: auto
@@ -1048,7 +1090,8 @@ body:after
 					background-size: 100%
 			> #gsearch
 				display: none
-			> #eng
+			> #eng,
+			> #ja
 				top: 16px
 				right: 54px
 		#wrapper_top
@@ -1092,6 +1135,7 @@ body:after
 		right: 13px
 		color: #00479d
 		font-size: 18px
+		z-index: 101
 		&::before
 			font-family: 'Font Awesome 5 Free'
 			display: inline-block
@@ -1099,7 +1143,7 @@ body:after
 			content: '\f03a'
 	#left
 		display: none
-		position: absolute
+		position: fixed
 		top: 36px
 		z-index: 110
 		right: 0
@@ -1129,7 +1173,7 @@ body:after
 			img
 				width: calc(100vw - 30px)
 			> .fb-container
-				width: calc(100% - 30px)
+				width: calc(100% - 30px) !important
 				iframe
 					width: auto !important			
 	#pre-footer

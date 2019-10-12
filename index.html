@@ -52,12 +52,13 @@ path: ''
         {% include side_nav.html %}
         <div id="right">
           <div id="contents">
-            <h3 id="updates">News</h3>
-            <table id="topics"></table>
-            <a class="read_more" href="news.html">Read more</a>
-            <a href=""></a>
-            <h3 id="facebook">Facebook</h3>
-            <div class="fb-container">
+            <section class="news-container">
+              <h3 id="updates">News</h3>
+              <table id="topics"></table>
+              <a class="read_more" href="news.html">Read more</a>
+            </section>
+            <section class="fb-container">
+              <h3 id="facebook">Facebook</h3>
               <div
                 class="fb-page"
                 data-href="https://www.facebook.com/TodaLab/"
@@ -79,7 +80,7 @@ path: ''
                 </blockquote>
               </div>
               <div class="fb-border-bottom"></div>
-            </div>
+            </section>
           </div>
         </div>
         <div class="clear"></div>
