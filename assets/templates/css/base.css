@@ -332,6 +332,7 @@ h1 a {
 #left #main_menu li.global_nav > .project_children > .child_nav {
   list-style-type: upper-roman;
   margin-left: 22px;
+  position: relative;
 }
 
 #left #main_menu li.global_nav > .study_children > .child_nav > a,
@@ -339,13 +340,19 @@ h1 a {
 #left #main_menu li.global_nav > .project_children > .child_nav > a {
   font-size: 14px;
   line-height: 26px;
+  font-weight: 100;
+}
+
+#left #main_menu li.global_nav > .study_children > .child_nav.active > a,
+#left #main_menu li.global_nav > .member_children > .child_nav.active > a,
+#left #main_menu li.global_nav > .project_children > .child_nav.active > a {
+  font-weight: bold;
 }
 
 #left #main_menu li.global_nav > .study_children.active > .child_nav > a,
 #left #main_menu li.global_nav > .member_children.active > .child_nav > a,
 #left #main_menu li.global_nav > .project_children.active > .child_nav > a {
   color: #344a5b;
-  font-weight: bold;
 }
 
 #left #main_menu li.global_nav.member.active .member_children {
@@ -692,8 +699,10 @@ h1 a {
 /*                                  #footer */
 /*============================================================================== */
 #footer {
-  padding-top: 3px;
-  text-align: right;
+  font-size: 12px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 #footer #info a {
@@ -821,7 +830,6 @@ body#index #contents .read_more {
 body#index #contents .fb-container {
   height: 710px;
   width: 100%;
-  overflow: hidden;
 }
 
 body#news #contents table#topics th, body#news #contents table#topics td {
@@ -868,10 +876,6 @@ body#index-eng #cover {
 body#index-eng #cover h2 {
   height: 278px;
   background: url(../images/frame/cover_contruct.jpg) no-repeat 0 0;
-}
-
-body#index-eng #footer {
-  background: url(../images/frame/bg_footer_contruct.jpg) no-repeat 0 0;
 }
 
 body#biogeocenosis #contents .imgCenter {
@@ -1304,15 +1308,6 @@ body:after {
  *  opacity: 1;
  *} */
 /* responsive */
-@media screen and (min-width: 1200px) {
-  body#index #right #contents {
-    display: flex;
-  }
-  body#index #right #contents .fb-container {
-    margin-left: 20px;
-  }
-}
-
 @media screen and (min-width: 1000px) {
   .swiper-container {
     height: auto;
@@ -1467,11 +1462,8 @@ body:after {
   #right > #contents img {
     width: calc(100vw - 30px) !important;
   }
-  #right > #contents > .fb-container {
-    width: calc(100% - 30px) !important;
-  }
-  #right > #contents > .fb-container iframe {
-    width: auto !important;
+  #right > #contents > .fb-container > .fb-iframe-container {
+    width: 100%;
   }
   #pre-footer {
     width: 100vw;

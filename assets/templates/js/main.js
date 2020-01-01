@@ -30,6 +30,10 @@ $(function() {
   if (pageType === "study" || pageType === "project" || pageType === "member") {
     let child_page = `.${pageType}_children`;
     $(child_page).addClass("active");
+    let file_name = window.location.href.split('/').pop().replace('.html', '')
+    console.log('file_name', file_name)
+    $(`.child_nav`).removeClass('active')
+    $(`.child_nav.${file_name}`).addClass('active')
   }
 
   function analytics(i, s, o, g, r, a, m) {
@@ -108,6 +112,43 @@ $(function() {
           version: "v2.2"
         });
       };
+
+      // ページプラグインの埋め込みコードを返す。
+      function pagePluginCode(w) {
+        var h = 700;
+        return `<div
+                  class="fb-page"
+                  data-href="https://www.facebook.com/TodaLab/"
+                  data-tabs="timeline"
+                  data-width="${w - 30}"
+                  data-height="${h}"
+                  data-small-header="true"
+                  data-adapt-container-width="true"
+                  data-hide-cover="false"
+                  data-show-facepile="false"
+                >`
+      }
+
+      // ページプラグインを追加する要素
+      var facebookWrap = $('.fb-iframe-container');
+      var fbBeforeWidth = ''; // 前回変更したときの幅
+      var fbWidth = facebookWrap.width(); // 今回変更する幅
+      var fbTimer = false;
+      $(window).on('load resize', function () {
+        if (fbTimer !== false) {
+          clearTimeout(fbTimer);
+        }
+        fbTimer = setTimeout(function () {
+          fbWidth = facebookWrap.width(); // 変更後の幅を取得
+          // 前回の幅から変更があった場合のみ処理
+          // スマホだとスクロール時にリサイズが発生することがあるため
+          if (fbWidth != fbBeforeWidth) {
+            facebookWrap.html(pagePluginCode(fbWidth)); // ページプラグインのコード変更
+            window.FB.XFBML.parse(); // ページプラグインの再読み込み
+            fbBeforeWidth = fbWidth; // 今回変更分を保存しておく
+          }
+        }, 200);
+      });
 
       if (
         location.pathname === "/toda_labo/index.html" ||
