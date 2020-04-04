@@ -193,7 +193,7 @@ h1 a {
   width: 358px;
   height: 61px;
   padding-top: 61px;
-  background: url(../images/frame/h1.gif) no-repeat 0 0;
+  background: url(../images/h1.gif) no-repeat 0 0;
 }
 
 #head #gsearch {
@@ -222,12 +222,12 @@ h1 a {
   display: block;
   width: 66px;
   height: 13px;
-  background: url(../images/frame/button_eng.gif) no-repeat 0 0;
+  background: url(../images/button_eng.gif) no-repeat 0 0;
   padding-top: 13px;
 }
 
 #head #eng a:hover {
-  background: url(../images/frame/button_eng.gif) no-repeat 0 -13px;
+  background: url(../images/button_eng.gif) no-repeat 0 -13px;
 }
 
 #head #ja {
@@ -243,12 +243,12 @@ h1 a {
   display: block;
   width: 80px;
   height: 13px;
-  background: url(../images/frame/button_ja.png) no-repeat 0 0;
+  background: url(../images/button_ja.png) no-repeat 0 0;
   padding-top: 13px;
 }
 
 #head #ja a:hover {
-  background: url(../images/frame/button_ja.png) no-repeat 0 -13px;
+  background: url(../images/button_ja.png) no-repeat 0 -13px;
 }
 
 /*============================================================================== */
@@ -261,7 +261,7 @@ h1 a {
 #cover h2 {
   width: 100%;
   text-indent: -1000em;
-  background: url(../images/frame/cover_second.jpg) no-repeat center;
+  background: url(../images/cover_second.jpg) no-repeat center;
   background-size: cover;
   height: 119px;
 }
@@ -425,7 +425,7 @@ h1 a {
 }
 
 #left div.fblb-container {
-  /* background: url("../images/frame/FacebookHeader2.png") no-repeat center top; */
+  /* background: url("../images/FacebookHeader2.png") no-repeat center top; */
   margin: 10px 0 0 -19px;
 }
 
@@ -435,7 +435,7 @@ h1 a {
   width: 197px;
 }
 
-/* #left div.fblb-container::before { content: url("../images/frame/facebook.png"); width:207px; height:70px; } */
+/* #left div.fblb-container::before { content: url("../images/facebook.png"); width:207px; height:70px; } */
 #right {
   width: calc(100% - 266px);
   margin-left: 10px;
@@ -475,7 +475,7 @@ h1 a {
   width: 464px;
   text-indent: 0em;
   padding-left: 25px;
-  background: url(../images/frame/h4_height3.gif) no-repeat 0 0;
+  background: url(../images/h4_height3.gif) no-repeat 0 0;
 }
 
 #contents h5 {
@@ -514,11 +514,6 @@ h1 a {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
-}
-
-#contents img {
-  border: solid 1px #666;
-  margin: 18px 0;
 }
 
 #contents figcaption {
@@ -671,19 +666,19 @@ h1 a {
   width: 106px;
   height: 12px;
   padding-top: 12px;
-  background: url(../images/frame/goTop.gif) no-repeat 0 0;
+  background: url(../images/goTop.gif) no-repeat 0 0;
 }
 
 #contents .goTop a:hover {
-  background: url(../images/frame/goTop.gif) no-repeat 0 -12px;
+  background: url(../images/goTop.gif) no-repeat 0 -12px;
 }
 
 .en #contents .goTop a {
-  background: url(../images/frame/goTop-en.jpg) no-repeat 0 0;
+  background: url(../images/goTop-en.jpg) no-repeat 0 0;
 }
 
 .en #contents .goTop a:hover {
-  background: url(../images/frame/goTop-en.jpg) no-repeat 0 -12px;
+  background: url(../images/goTop-en.jpg) no-repeat 0 -12px;
 }
 
 /*============================================================================== */
@@ -766,31 +761,31 @@ body#index #cover .swiper-slide img {
 }
 
 body#index.en #cover .swiper-slide1 h2 {
-  background: url(../images/frame/cover_top.jpg) no-repeat 0 0;
+  background: url(../images/cover_top.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
 body#index.en #cover .swiper-slide2 h2 {
-  background: url(../images/frame/cover_top_ocean-en.jpg) no-repeat 0 0;
+  background: url(../images/cover_top_ocean-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
 body#index.en #cover .swiper-slide3 h2 {
-  background: url(../images/frame/cover_top_pbr-en.jpg) no-repeat 0 0;
+  background: url(../images/cover_top_pbr-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
 body#index.en #cover .swiper-slide4 h2 {
-  background: url(../images/frame/cover_top_goto-en.jpg) no-repeat 0 0;
+  background: url(../images/cover_top_goto-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
 
 body#index.en #cover .swiper-slide5 h2 {
-  background: url(../images/frame/cover_top_biwa-en.jpg) no-repeat 0 0;
+  background: url(../images/cover_top_biwa-en.jpg) no-repeat 0 0;
   background-size: cover;
   text-indent: -1000em;
 }
@@ -859,12 +854,12 @@ body.en h1 a {
   width: 555px;
   height: 61px;
   padding-top: 61px;
-  background: url(../images/frame/h1en.png) no-repeat 0 0;
+  background: url(../images/h1en.png) no-repeat 0 0;
 }
 
 body#index-eng #wrapper_bottom {
   padding-bottom: 48px;
-  background: url(../images/frame/bg_wrapper_contruct.gif) no-repeat 0 0;
+  background: url(../images/bg_wrapper_contruct.gif) no-repeat 0 0;
   background-position: bottom;
 }
 
@@ -875,7 +870,7 @@ body#index-eng #cover {
 
 body#index-eng #cover h2 {
   height: 278px;
-  background: url(../images/frame/cover_contruct.jpg) no-repeat 0 0;
+  background: url(../images/cover_contruct.jpg) no-repeat 0 0;
 }
 
 body#biogeocenosis #contents .imgCenter {
@@ -887,17 +882,17 @@ body#biogeocenosis #contents h4 {
 }
 
 body#study h3#study-ocean {
-  background: url(../images/frame/h3_studies.png) no-repeat 0 0;
+  background: url(../images/h3_studies.png) no-repeat 0 0;
   margin-bottom: 20px;
 }
 
 body#study h3#study-waste {
-  background: url(../images/frame/h3_studies.png) no-repeat 0 -28px;
+  background: url(../images/h3_studies.png) no-repeat 0 -28px;
   margin-bottom: 20px;
 }
 
 body#study h3#study-recycle {
-  background: url(../images/frame/h3_studies.png) no-repeat 0 -56px;
+  background: url(../images/h3_studies.png) no-repeat 0 -56px;
   margin-bottom: 20px;
 }
 
@@ -1025,8 +1020,76 @@ body#achievement #contents .YearDiv {
 /*                                 #achievement */
 /*============================================================================== */
 /*============================================================================== */
-/*                                 #obog */
+/*                                 #member, obog */
 /*============================================================================== */
+#contents #map {
+  width: 100%;
+  padding-bottom: 48%;
+  margin-bottom: 50px;
+}
+
+#contents #map .infobox a.name {
+  font-weight: bold;
+}
+
+#contents #map .infobox p.content {
+  font-size: 12px !important;
+}
+
+#contents .member_wrapper > ul {
+  margin-bottom: 50px !important;
+}
+
+#contents .member_wrapper > ul > li.single_profile {
+  list-style: none;
+  display: flex;
+  align-items: end;
+  padding-bottom: 14px;
+  margin-bottom: 13px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+#contents .member_wrapper > ul > li.single_profile:last-of-type {
+  border: none;
+}
+
+#contents .member_wrapper > ul > li.single_profile > img {
+  margin-right: 15px;
+  border-radius: 1px;
+  width: 120px;
+}
+
+#contents .member_wrapper > ul > li.single_profile > div > p.position {
+  font-size: 10px !important;
+}
+
+#contents .member_wrapper > ul > li.single_profile > div > p.name {
+  font-weight: bold;
+}
+
+#contents .member_wrapper > ul > li.single_profile > div > p.biography {
+  font-size: 12px !important;
+}
+
+#contents .member_wrapper > ul > li.single_profile > div > p.comment {
+  font-size: 12px !important;
+  background-color: rgba(129, 199, 184, 0.35);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: relative;
+}
+
+#contents .member_wrapper > ul > li.single_profile > div > p.comment::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: -16px;
+  margin-top: -8px;
+  border: 8px solid transparent;
+  border-right: 8px solid rgba(129, 199, 184, 0.35);
+}
+
 #obog #contents td p {
   margin: 0;
 }

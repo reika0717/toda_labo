@@ -20,7 +20,7 @@ path: ''
 
 #### 指導教授紹介
 
-![戸田龍樹](assets/images/toda_profile.jpg)
+![戸田龍樹](assets/images/members/toda_profile.jpg)
 
 ##### 戸田龍樹
 

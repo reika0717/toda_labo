@@ -20,7 +20,7 @@ Therefore, our laboratory also studies how to properly treat wastes from human a
 
 #### Professor
 
-![Tatsuki Toda]({{site.baseurl}}/assets/images/toda_profile.jpg)
+![Tatsuki Toda]({{site.baseurl}}/assets/images/members/toda_profile.jpg)
 
 ##### Tatsuki Toda
 
