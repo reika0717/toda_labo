@@ -1023,9 +1023,9 @@ body#achievement #contents .YearDiv {
 /*                                 #member, obog */
 /*============================================================================== */
 #contents #map {
-  width: 100%;
   padding-bottom: 48%;
   margin-bottom: 50px;
+  object-fit: cover;
 }
 
 #contents #map .infobox a.name {
@@ -1078,6 +1078,7 @@ body#achievement #contents .YearDiv {
   border-radius: 5px;
   margin-top: 10px;
   position: relative;
+  word-break: break-all;
 }
 
 #contents .member_wrapper > ul > li.single_profile > div > p.comment::before {
@@ -1527,6 +1528,11 @@ body:after {
   }
   #right > #contents > .fb-container > .fb-iframe-container {
     width: 100%;
+  }
+  #right > #contents .member_wrapper > ul > li.single_profile > img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 100px;
   }
   #pre-footer {
     width: 100vw;
