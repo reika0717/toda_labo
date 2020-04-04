@@ -1043,6 +1043,7 @@ body#achievement #contents .YearDiv {
 #contents .member_wrapper > ul > li.single_profile {
   list-style: none;
   display: flex;
+  justify-content: flex-start;
   align-items: end;
   padding-bottom: 14px;
   margin-bottom: 13px;
