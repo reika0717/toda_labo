@@ -32,7 +32,7 @@
 - [過去のプロジェクト](https://github.com/reika0717/toda_labo/blob/master/en/pastprojects.md) 
 - [リンク](https://github.com/reika0717/toda_labo/blob/master/en/links.md)
 
-2. マークダウン記法で編集する。
+2. 右上のpenのアイコンをクリックし、マークダウン記法で編集する。
 
 **画像を挿入する場合**
 - (こちら)[https://github.com/reika0717/toda_labo/tree/master/assets/images]にアクセス後、Upload fileボタンをクリックし挿入したい画像をアップロードする。
