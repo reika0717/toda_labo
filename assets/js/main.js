@@ -461,7 +461,6 @@ $(function() {
                   <p class="position">${entries[i + key_order['役職'] - 1].content.$t}</p>
                   <p class="name">${entries[i + key_order['名前'] - 1].content.$t}</p>
                   ${biography_content}
-                  <p class="comment">${entries[i + key_order['一言'] - 1].content.$t}</p>
                 </div>
               </li>
             `
@@ -497,7 +496,6 @@ $(function() {
                   <p class="position">${entries[i + key_order['position'] - 1].content.$t}</p>
                   <p class="name">${entries[i + key_order['name'] - 1].content.$t}</p>
                   ${biography_content}
-                  <p class="comment">${entries[i + key_order['comment'] - 1].content.$t}</p>
                 </div>
               </li>
             `
@@ -547,18 +545,23 @@ $(function() {
               job_content =
                 job_content === "-"
                   ? ""
-                  : `<p class="job"><span class="title">職業：</span>${job_content}</p>`;
+                  : `<p class="job">${job_content}</p>`;
               let profile = `
-                <li class="single_profile" id="${entries[i + key_order['画像タイトル'] - 1].content.$t}">
-                  <img src="./assets/images/members/${entries[i + key_order['画像タイトル'] - 1].content.$t}.jpg"/>
+                <li class="single_profile" id="${
+                  entries[i + key_order["画像タイトル"] - 1].content.$t
+                }">
+                  <img src="./assets/images/members/${
+                    entries[i + key_order["画像タイトル"] - 1].content.$t
+                  }.jpg"/>
                   <div>
-                    <p class="name">${entries[i + key_order['名前'] - 1].content.$t}</p>
-                    ${biography_content}
                     ${job_content}
-                    <p class="comment">${entries[i + key_order['一言'] - 1].content.$t}</p>
+                    <p class="name">${
+                      entries[i + key_order["名前"] - 1].content.$t
+                    }</p>
+                    ${biography_content}
                   </div>
                 </li>
-              `
+              `;
               switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
                 case "研究者（大学・研究所・企業）":
                   researcher_profile += profile
@@ -579,7 +582,7 @@ $(function() {
             company_profile += `</ul>`
             interenational_profile += `</ul>`
             $('.member_wrapper').append(researcher_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
-            
+
             // Map
             var map;
             var marker = [];
@@ -665,19 +668,18 @@ $(function() {
               biography_content =
                 biography_content === "-"
                   ? ""
-                  : `<p class="biography"><span class="title">biography：</span>${biography_content}</p>`;
+                  : `<p class="biography"><span class="title">Biography：</span>${biography_content}</p>`;
               job_content =
                 job_content === "-"
                   ? ""
-                  : `<p class="job"><span class="title">job：</span>${job_content}</p>`;
+                  : `<p class="job">${job_content}</p>`;
               let profile = `
                 <li class="single_profile" id="${entries[i + key_order['画像タイトル'] - 1].content.$t}">
                   <img src="../assets/images/members/${entries[i + key_order['画像タイトル'] - 1].content.$t}.jpg"/>
                   <div>
-                    <p class="name">${entries[i + key_order['name'] - 1].content.$t}</p>
                     ${job_content}
+                    <p class="name">${entries[i + key_order['name'] - 1].content.$t}</p>
                     ${biography_content}
-                    <p class="comment">${entries[i + key_order['comment'] - 1].content.$t}</p>
                   </div>
                 </li>
               `
