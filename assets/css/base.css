@@ -1049,6 +1049,7 @@ body#achievement #contents .YearDiv {
   margin-right: 15px;
   border-radius: 1px;
   width: 120px;
+  min-width: 120px;
 }
 
 #contents .member_wrapper > ul > li.single_profile > div > p.position {
@@ -1570,6 +1571,7 @@ body:after {
     width: 100px !important;
     height: 100px !important;
     border-radius: 100px;
+    min-width: 120px;
   }
   #pre-footer {
     width: 100vw;
