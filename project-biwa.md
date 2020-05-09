@@ -10,12 +10,11 @@ path: ''
 ##### 「水草バイオマスの持続可能な収穫と利活用による湖沼生態系保全技術の確立」
 
 <div class="multiple_figure_wrapper">
-{% include image.html url="./assets/images/biwa-gengoro.jpg" description="滋賀県が所有する水草刈取り船「げんごろう」。夏場は毎日出動しています" wrapper_style="margin-right: 10px; width: 200px;" style="width: 200px;"%}
-{% include image.html url="./assets/images/biwa-dry.jpg" description="漁師さんが刈り取った水草は漁港に積み上げられ、数日間天日干しした後、トラックで処分場へと運ばれます" wrapper_style="width: 200px;" style="width: 200px;"%}
+{% include image.html url="./assets/images/biwa-gengoro.jpg" description="滋賀県が所有する水草刈取り船「げんごろう」。夏場は毎日出動しています" wrapper_style="margin-right: 10px; width: 200px;" %}
+{% include image.html url="./assets/images/biwa-dry.jpg" description="漁師さんが刈り取った水草は漁港に積み上げられ、数日間天日干しした後、トラックで処分場へと運ばれます" wrapper_style="width: 200px;" %}
 </div>
 
 {% include image.html url="./assets/images/biwa-problem.jpg" style="width: 300px;"%}
-
 
 内容：
 近年、日本各地の陸水域では水草の大量繁茂による環境悪化が懸念されています。例えば、琵琶湖では水草の分布が南湖の90%以上を覆っており、社会・経済にわたる複合的環境問題（漁業活動への影響、周辺住民への悪臭被害、景観悪化によるツーリズムへの影響など）を引き起こしています。琵琶湖では国及び自治体の環境政策として緊急な対処が必要とされており、環境省の「湖沼水質保全計画」ならびに滋賀県の「マザーレイク21計画」において、「水草の除去および繁茂抑制方法の検討」が掲げられています。

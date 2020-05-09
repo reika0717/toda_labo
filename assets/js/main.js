@@ -1,5 +1,14 @@
 $(function() {
   var pageType = $("html").attr("data-page-type");
+  const column_title = {
+    name_title_ja: "名前",
+    name_title_en: "name",
+    position_title_ja: "役職",
+    position_title_en: "position",
+    biography_title_ja: "略歴",
+    biography_title_en: "biography",
+    image_title: "画像タイトル"
+  };
 
   // spメニュートグル
   $(".menu_for_sp").on("click", () => {
@@ -452,18 +461,29 @@ $(function() {
             let key_length = Object.keys(key_order).length
             let single_profile = `<ul>`
             for (let i = key_length; i < entries.length; i = i + key_length) {
-              let biography_content = entries[i + key_order['略歴'] - 1].content.$t
+              let biography_content =
+                entries[i + key_order[column_title.biography_title_ja] - 1]
+                  .content.$t;
               biography_content = biography_content === '-' ? '' : `<p class="biography">${biography_content}</p>`
               single_profile += `
               <li class="single_profile">
-                <img src="./assets/images/members/${entries[i + key_order['画像タイトル'] - 1].content.$t}.jpg"/>
+                <img src="./assets/images/members/${
+                  entries[i + key_order[column_title.image_title] - 1].content
+                    .$t
+                }.jpg"/>
                 <div>
-                  <p class="position">${entries[i + key_order['役職'] - 1].content.$t}</p>
-                  <p class="name">${entries[i + key_order['名前'] - 1].content.$t}</p>
+                  <p class="position">${
+                    entries[i + key_order[column_title.position_title_ja] - 1]
+                      .content.$t
+                  }</p>
+                  <p class="name">${
+                    entries[i + key_order[column_title.name_title_ja] - 1]
+                      .content.$t
+                  }</p>
                   ${biography_content}
                 </div>
               </li>
-            `
+            `;
             }
             single_profile += `</ul>`
             $('.member_wrapper').append(single_profile)
@@ -487,18 +507,29 @@ $(function() {
             let key_length = Object.keys(key_order).length
             let single_profile = `<ul>`
             for (let i = key_length; i < entries.length; i = i + key_length) {
-              let biography_content = entries[i + key_order['biography'] - 1].content.$t
+              let biography_content =
+                entries[i + key_order[column_title.biography_title_en] - 1]
+                  .content.$t;
               biography_content = biography_content === '-' ? '' : `<p class="biography">${biography_content}</p>`
               single_profile += `
               <li class="single_profile">
-                <img src="../assets/images/members/${entries[i + key_order['画像タイトル'] - 1].content.$t}.jpg"/>
+                <img src="../assets/images/members/${
+                  entries[i + key_order[column_title.image_title] - 1].content
+                    .$t
+                }.jpg"/>
                 <div>
-                  <p class="position">${entries[i + key_order['position'] - 1].content.$t}</p>
-                  <p class="name">${entries[i + key_order['name'] - 1].content.$t}</p>
+                  <p class="position">${
+                    entries[i + key_order[column_title.position_title_en] - 1]
+                      .content.$t
+                  }</p>
+                  <p class="name">${
+                    entries[i + key_order[column_title.name_title_en] - 1]
+                      .content.$t
+                  }</p>
                   ${biography_content}
                 </div>
               </li>
-            `
+            `;
             }
             single_profile += `</ul>`
             $('.member_wrapper').append(single_profile)
@@ -530,11 +561,19 @@ $(function() {
             for (let i = key_length; i < entries.length; i = i + key_length) {
               let plot_content = entries[i + key_order['座標'] - 1].content.$t
               let job_content = entries[i + key_order['職業'] - 1].content.$t
-              let biography_content = entries[i + key_order['略歴'] - 1].content.$t
+              let biography_content =
+                entries[i + key_order[column_title.biography_title_ja] - 1]
+                  .content.$t;
               if (plot_content !== '-') {
                 let obj = {}
-                obj['id'] = entries[i + key_order['画像タイトル'] - 1].content.$t
-                obj['name'] = entries[i + key_order['名前'] - 1].content.$t
+                obj["id"] =
+                  entries[
+                    i + key_order[column_title.image_title] - 1
+                  ].content.$t;
+                obj["name"] =
+                  entries[
+                    i + key_order[column_title.name_title_ja] - 1
+                  ].content.$t;
                 obj["content"] = job_content;
                 plot_content.replace(/lat:(\-?\d+\.+?\d+)\,lng:(\-?\d+\.+?\d+)/, '$1, $2')
                 obj['lat'] = Number(RegExp.$1)
@@ -548,15 +587,16 @@ $(function() {
                   : `<p class="job">${job_content}</p>`;
               let profile = `
                 <li class="single_profile" id="${
-                  entries[i + key_order["画像タイトル"] - 1].content.$t
+                  entries[i + key_order[column_title.image_title] - 1].content.$t
                 }">
                   <img src="./assets/images/members/${
-                    entries[i + key_order["画像タイトル"] - 1].content.$t
+                    entries[i + key_order[column_title.image_title] - 1].content.$t
                   }.jpg"/>
                   <div>
                     ${job_content}
                     <p class="name">${
-                      entries[i + key_order["名前"] - 1].content.$t
+                      entries[i + key_order[column_title.name_title_ja] - 1]
+                        .content.$t
                     }</p>
                     ${biography_content}
                   </div>
@@ -601,7 +641,7 @@ $(function() {
                 marker[i] = new google.maps.Marker({
                   position: markerLatLng,
                   map: map,
-                  title: member_address[i]['name']
+                  title: member_address[i][column_title.name_title_en],
                 });
 
                 // infobox 用の div エレメントを生成
@@ -609,8 +649,10 @@ $(function() {
                 // infobox に表示するHTML
                 infoboxContent.innerHTML = `
                   <div class="infobox">
-                    <a class="name" href="#${member_address[i]['id']}">${ member_address[i]['name'] }</a>
-                    <p class="content">${ member_address[i]['content'] }</p>
+                    <a class="name" href="#${member_address[i]["id"]}">${
+                  member_address[i][column_title.name_title_en]
+                }</a>
+                    <p class="content">${member_address[i]["content"]}</p>
                   </div >
                 `;
                 infowindow[i] = new google.maps.InfoWindow({
@@ -654,11 +696,16 @@ $(function() {
             for (let i = key_length; i < entries.length; i = i + key_length) {
               let plot_content = entries[i + key_order['座標'] - 1].content.$t
               let job_content = entries[i + key_order['job'] - 1].content.$t
-              let biography_content = entries[i + key_order['biography'] - 1].content.$t
+              let biography_content =
+                entries[i + key_order[column_title.biography_title_en] - 1]
+                  .content.$t;
               if (plot_content !== '-') {
                 let obj = {}
-                obj['id'] = entries[i + key_order['画像タイトル'] - 1].content.$t
-                obj['name'] = entries[i + key_order['name'] - 1].content.$t
+                obj['id'] = entries[i + key_order[column_title.image_title] - 1].content.$t
+                obj[column_title.name_title_en] =
+                  entries[
+                    i + key_order[column_title.name_title_en] - 1
+                  ].content.$t;
                 obj["content"] = job_content;
                 plot_content.replace(/lat:(\-?\d+\.+?\d+)\,lng:(\-?\d+\.+?\d+)/, '$1, $2')
                 obj['lat'] = Number(RegExp.$1)
@@ -674,15 +721,22 @@ $(function() {
                   ? ""
                   : `<p class="job">${job_content}</p>`;
               let profile = `
-                <li class="single_profile" id="${entries[i + key_order['画像タイトル'] - 1].content.$t}">
-                  <img src="../assets/images/members/${entries[i + key_order['画像タイトル'] - 1].content.$t}.jpg"/>
+                <li class="single_profile" id="${
+                  entries[i + key_order[column_title.image_title] - 1].content.$t
+                }">
+                  <img src="../assets/images/members/${
+                    entries[i + key_order[column_title.image_title] - 1].content.$t
+                  }.jpg"/>
                   <div>
                     ${job_content}
-                    <p class="name">${entries[i + key_order['name'] - 1].content.$t}</p>
+                    <p class="name">${
+                      entries[i + key_order[column_title.name_title_en] - 1]
+                        .content.$t
+                    }</p>
                     ${biography_content}
                   </div>
                 </li>
-              `
+              `;
               switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
                 case "研究者（大学・研究所・企業）":
                   researcher_profile += profile
@@ -722,7 +776,7 @@ $(function() {
                 marker[i] = new google.maps.Marker({
                   position: markerLatLng,
                   map: map,
-                  title: member_address[i]['name']
+                  title: member_address[i][column_title.name_title_en],
                 });
 
                 // infobox 用の div エレメントを生成
@@ -730,8 +784,10 @@ $(function() {
                 // infobox に表示するHTML
                 infoboxContent.innerHTML = `
                   <div class="infobox">
-                    <a class="name" href="#${member_address[i]['id']}">${member_address[i]['name']}</a>
-                    <p class="content">${ member_address[i]['content']}</p>
+                    <a class="name" href="#${member_address[i]["id"]}">${
+                  member_address[i][column_title.name_title_en]
+                }</a>
+                    <p class="content">${member_address[i]["content"]}</p>
                   </div >
                 `;
                 infowindow[i] = new google.maps.InfoWindow({
