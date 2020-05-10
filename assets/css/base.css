@@ -899,10 +899,23 @@ body#news #contents table#topics td {
   padding-bottom: 10px;
 }
 
+body#news #contents table#topics {
+  margin-bottom: 40px;
+}
+
 body#news #contents table#topics th {
   width: 66px;
   text-align: left;
   padding-right: 20px;
+}
+
+body#news #contents table#topics th, body#news #contents table#topics td {
+  border: 0;
+  padding: 7px 7px 7px 0px;
+  vertical-align: top;
+  background-color: transparent;
+  line-height: 1.3em;
+  font-size: 14px;
 }
 
 /*============================================================================== */

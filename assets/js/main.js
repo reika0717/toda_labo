@@ -7,7 +7,9 @@ $(function() {
     position_title_en: "position",
     biography_title_ja: "略歴",
     biography_title_en: "biography",
-    image_title: "画像タイトル"
+    comment_title_ja: "一言",
+    comment_title_en: "comment",
+    image_title: "画像タイトル",
   };
 
   // spメニュートグル
@@ -481,6 +483,10 @@ $(function() {
                       .content.$t
                   }</p>
                   ${biography_content}
+                  <p class="comment">${
+                    entries[i + key_order[column_title.comment_title_ja] - 1]
+                      .content.$t
+                  }</p>
                 </div>
               </li>
             `;
@@ -527,6 +533,10 @@ $(function() {
                       .content.$t
                   }</p>
                   ${biography_content}
+                  <p class="comment">${
+                    entries[i + key_order[column_title.comment_title_en] - 1]
+                      .content.$t
+                  }</p>
                 </div>
               </li>
             `;

@@ -81,7 +81,7 @@
 
 ## 研究室メンバースプレッドシートのカラム名を変えたい場合
 1. [ウェブサイト運営用のスプレッドシート](https://docs.google.com/spreadsheets/d/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/edit#gid=1945290017)にアクセスし、カラムタイトルを変更する。
-2. [javascriptのファイル](https://github.com/reika0717/toda_labo/blob/master/assets/js/main.js)を開き、右上のpenのアイコンをクリックし、4行目〜10行目にあるタイトル名を変更する。
+2. [javascriptのファイル](https://github.com/reika0717/toda_labo/blob/master/assets/js/main.js)を開き、右上のpenのアイコンをクリックし、4行目〜12行目にあるタイトル名を変更する。
 
 ## スプレッドシート編集時の注意点
 - データがない場合は「-」(半角ハイフン)を入力する。（空白のままだと表示がずれてしまいます）
