@@ -567,7 +567,7 @@ $(function() {
             let researcher_profile = `<h4>研究者（大学・研究所・企業）</h4><ul>`
             let teacher_profile = `<h4>教員・公務員</h4><ul>`
             let company_profile = `<h4>企業</h4><ul>`
-            let interenational_profile = `<h4>国際機関</h4><ul>`
+            let interenational_profile = `<h4>国際協力</h4><ul>`
             for (let i = key_length; i < entries.length; i = i + key_length) {
               let plot_content = entries[i + key_order['座標'] - 1].content.$t
               let job_content = entries[i + key_order['職業'] - 1].content.$t
