@@ -622,7 +622,7 @@ $(function() {
                 case "企業":
                   company_profile += profile
                   break;
-                case "国際機関":
+                case "国際協力":
                   interenational_profile += profile
                   break;
               }
@@ -757,7 +757,7 @@ $(function() {
                 case "企業":
                   company_profile += profile
                   break;
-                case "国際機関":
+                case "国際協力":
                   interenational_profile += profile
                   break;
               }
