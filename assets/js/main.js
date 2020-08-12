@@ -564,7 +564,7 @@ $(function() {
             }
             let key_length = Object.keys(key_order).length
             // リスト描画
-            let researcher_profile = `<h4>大学・研究所</h4><ul>`
+            let researcher_profile = `<h4>大学、研究所</h4><ul>`
             let officer_profile = `<h4>国家・地方公務員、財団法人</h4><ul>`
             let teacher_profile = `<h4>学校教員（小中高）</h4><ul>`
             let company_profile = `<h4>企業</h4><ul>`
@@ -614,7 +614,7 @@ $(function() {
                 </li>
               `;
               switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
-                case "大学・研究所":
+                case "大学、研究所":
                   researcher_profile += profile
                   break;
                 case "国家・地方公務員、財団法人":
@@ -754,7 +754,7 @@ $(function() {
                 </li>
               `;
               switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
-                case "大学・研究所":
+                case "大学、研究所":
                   researcher_profile += profile
                   break;
                 case "国家・地方公務員、財団法人":
