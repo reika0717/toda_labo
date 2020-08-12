@@ -618,7 +618,7 @@ $(function() {
                   researcher_profile += profile
                   break;
                 case "国家・地方公務員、財団法人":
-                  researcher_profile += profile
+                  officer_profile += profile
                   break;
                 case "学校教員（小中高）":
                   teacher_profile += profile
