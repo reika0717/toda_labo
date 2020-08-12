@@ -771,6 +771,7 @@ $(function() {
               }
             }
             researcher_profile += `</ul>`
+            officer_profile += `</ul>`
             teacher_profile += `</ul>`
             company_profile += `</ul>`
             interenational_profile += `</ul>`
