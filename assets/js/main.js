@@ -635,7 +635,7 @@ $(function() {
             teacher_profile += `</ul>`
             company_profile += `</ul>`
             interenational_profile += `</ul>`
-            $('.member_wrapper').append(researcher_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
+            $('.member_wrapper').append(researcher_profile).append(officer_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
 
             // Map
             var map;
