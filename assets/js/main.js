@@ -564,8 +564,9 @@ $(function() {
             }
             let key_length = Object.keys(key_order).length
             // リスト描画
-            let researcher_profile = `<h4>研究者（大学・研究所・企業）</h4><ul>`
-            let teacher_profile = `<h4>公務員・学校教員（小中高）</h4><ul>`
+            let researcher_profile = `<h4>大学・研究所</h4><ul>`
+            let officer_profile = `<h4>国家・地方公務員、財団法人</h4><ul>`
+            let teacher_profile = `<h4>学校教員（小中高）</h4><ul>`
             let company_profile = `<h4>企業</h4><ul>`
             let interenational_profile = `<h4>国際協力</h4><ul>`
             for (let i = key_length; i < entries.length; i = i + key_length) {
@@ -613,10 +614,13 @@ $(function() {
                 </li>
               `;
               switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
-                case "研究者（大学・研究所・企業）":
+                case "大学・研究所":
                   researcher_profile += profile
                   break;
-                case "公務員・学校教員（小中高）":
+                case "国家・地方公務員、財団法人":
+                  researcher_profile += profile
+                  break;
+                case "学校教員（小中高）":
                   teacher_profile += profile
                   break;
                 case "企業":
@@ -700,6 +704,7 @@ $(function() {
             let key_length = Object.keys(key_order).length
             // リスト描画
             let researcher_profile = `<h4>Researcher</h4><ul>`
+            let officer_profile = `<h4>Public office worker</h4><ul>`
             let teacher_profile = `<h4>Teacher</h4><ul>`
             let company_profile = `<h4>Office Worker</h4><ul>`
             let interenational_profile = `<h4>International Organization Worker</h4><ul>`
@@ -748,10 +753,13 @@ $(function() {
                 </li>
               `;
               switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
-                case "研究者（大学・研究所・企業）":
+                case "大学・研究所":
                   researcher_profile += profile
                   break;
-                case "公務員・学校教員（小中高）":
+                case "国家・地方公務員、財団法人":
+                  officer_profile += profile
+                  break;
+                case "学校教員（小中高）":
                   teacher_profile += profile
                   break;
                 case "企業":
@@ -766,7 +774,7 @@ $(function() {
             teacher_profile += `</ul>`
             company_profile += `</ul>`
             interenational_profile += `</ul>`
-            $('.member_wrapper').append(researcher_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
+            $('.member_wrapper').append(researcher_profile).append(officer_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
 
             // Map
             var map;
