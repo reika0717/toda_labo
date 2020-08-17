@@ -16,7 +16,7 @@ In collaboration with Institut Teknologi Sepuluh Nopember (ITS) in Indonesia, we
 
 #### Past-present large-scale projects:
 
-{% include image.html url="../assets/images/projectlist.png" style="width: 454px"%}
+{% include image.html url="../assets/images/研究費図_Toda laboratory.png" style="width: 454px"%}
 
 The following sections will explain the latest research projects this laboratory is engaged in.
 
