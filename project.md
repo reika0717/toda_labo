@@ -13,7 +13,7 @@ path: ''
 
 #### これまで実施してきた大型プロジェクト
 
-{% include image.html url="assets/images/projectlist.png" style="width: 454px"%}
+{% include image.html url="assets/images/研究費図_Toda laboratory.png" style="width: 454px"%}
 
 以下に最近の研究プロジェクトのいくつかをもう少し詳しく説明します。
 
