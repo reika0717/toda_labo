@@ -9,8 +9,8 @@ path: ''
 
 #### 大学関連
 
-- [創価大学](http://www.soka.ac.jp//"){:target="\_blank"}
-- [創価大学工学部](http://www.t.soka.ac.jp//"){:target="\_blank"}
+- [創価大学](https://www.soka.ac.jp){:target="\_blank"}
+- [創価大学工学部](https://www.soka.ac.jp/grad-eng/){:target="\_blank"}
 
 #### 共同研究機関
 
