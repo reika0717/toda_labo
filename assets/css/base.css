@@ -151,6 +151,45 @@ body#index #contents #topics td {
   font-size: 1.6vw;
 }
 
+#body .scroll_to_top {
+  position: fixed;
+  right: 90px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  background-color: #344a5b;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, .6);
+  transition: .3s;
+}
+
+#body .scroll_to_top:after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#body .scroll_to_top:before {
+  content: '';
+  width: 13px;
+  height: 19px;
+  border-top: 2px solid #fff;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 35%;
+  left: 24%;
+}
+
+#body .scroll_to_top:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
 /*============================================================================== */
 /*                               コ  ン  テ  ナ */
 /*============================================================================== */

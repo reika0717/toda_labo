@@ -42,10 +42,13 @@ $(function() {
     let child_page = `.${pageType}_children`;
     $(child_page).addClass("active");
     let file_name = window.location.href.split('/').pop().replace('.html', '')
-    console.log('file_name', file_name)
     $(`.child_nav`).removeClass('active')
     $(`.child_nav.${file_name}`).addClass('active')
   }
+
+  $('.scroll_to_top').on('click', function() {
+    $('html, body').animate({scrollTop:0});
+  })
 
   function analytics(i, s, o, g, r, a, m) {
     i["GoogleAnalyticsObject"] = r;
@@ -312,42 +315,63 @@ $(function() {
         success: function(data, order) {
           let entries = data.feed.entry;
           let article_array = {};
-          for (let i = 4; i < entries.length; i = i + 4) {
-            article_array[entries[i].content.$t.substr(-5, 4)] = [];
+          let col_length = 0;
+          for (var i = 1; i < entries.length; i++) {
+            if(entries[i].gs$cell.col === "1") {
+              col_length = i;
+              break
+            }
           }
-          for (let i = 4; i < entries.length; i = i + 4) {
+          function getOrder(target) {
+            var order = 0
+            for (var i = 0; i < entries.length; i++) {
+              if (entries[i].content.$t === target) {
+                order = i
+                break;
+              }
+            }
+            return order
+          }
+
+          for (let i = col_length; i < entries.length; i = i + col_length) {
+            article_array[entries[i + getOrder('year')].content.$t] = [];
+          }
+
+          for (let i = col_length; i < entries.length; i = i + col_length) {
+
             let obj = {
               author: "",
               title: "",
               link: "",
               article: ""
             };
-            if (entries[i] !== undefined) {
-              obj.author = entries[i].content.$t.replace(
-                "T. Toda",
-                '<span class="prof">T. Toda</span>'
-              );
+            obj.author = entries[i + getOrder('author')].content.$t.replace(
+              "T. Toda",
+              '<span class="prof">T. Toda</span>'
+            );
+
+            obj.title = entries[i + getOrder('title')].content.$t.replace(
+              /\*\*([^\*\*]+)\*\*/g,
+              '<span class="italic">' + "$1" + "</span>"
+            );
+
+            obj.link = entries[i + getOrder('link')].content.$t;
+
+            obj.article = entries[i + getOrder('article')].content.$t.replace(
+              /\*\*([^\*\*]+)\*\*/g,
+              '<span class="italic">' + "$1" + "</span>"
+            );
+            if(entries[i + getOrder('year')].content.$t.match(/\d{4}/g)) {
+              article_array[entries[i + getOrder('year')].content.$t].push(obj);
             }
-            if (entries[i + 2] !== undefined) {
-              obj.title = entries[i + 1].content.$t.replace(
-                /\*\*([^\*\*]+)\*\*/g,
-                '<span class="italic">' + "$1" + "</span>"
-              );
-            }
-            if (entries[i + 3] !== undefined) {
-              obj.link = entries[i + 2].content.$t;
-            }
-            if (entries[i + 4] !== undefined) {
-              obj.article = entries[i + 3].content.$t.replace(
-                /\*\*([^\*\*]+)\*\*/g,
-                '<span class="italic">' + "$1" + "</span>"
-              );
-            }
-            article_array[entries[i].content.$t.substr(-5, 4)].push(obj);
           }
           let year_array = Object.keys(article_array).reverse();
+
           $(".academic_paper_wrapper").append(`<ol class="year_list"></ol>`);
+          
           year_array.forEach(year => {
+            $('.scientific_papers_years').append(`<li><a href="#Journal${year}">${year}</a></li>`)
+
             $(`.year_list`).append(
               `<h5 class="YearDiv"><a name="Journal${year}"></a>${year}</h5></ol>`
             );
@@ -443,7 +467,12 @@ $(function() {
         $(elm).wrap(`<a href="${imgsrc}" rel="lightbox"></a>`);
       });
     },
-    project: function() {},
+    project: function() {
+      $("img").each(function(index, elm) {
+        let imgsrc = $(elm).attr("src");
+        $(elm).wrap(`<a href="${imgsrc}" rel="lightbox"></a>`);
+      });
+    },
     member: function() {
       if (location.pathname === "/toda_labo/active_member.html") {
         $.ajax({
