@@ -1,4 +1,7 @@
-$(function() {
+const API_KEY = "AIzaSyDyp7uWrxIBaGxW4mT1fqR1QdbrcnJZShw"; // TODO: 見えないようにする
+const SPREADSHEET_ID = "1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk";
+
+$(function () {
   var pageType = $("html").attr("data-page-type");
   const column_title = {
     name_title_ja: "名前",
@@ -41,20 +44,20 @@ $(function() {
   if (pageType === "study" || pageType === "project" || pageType === "member") {
     let child_page = `.${pageType}_children`;
     $(child_page).addClass("active");
-    let file_name = window.location.href.split('/').pop().replace('.html', '')
-    $(`.child_nav`).removeClass('active')
-    $(`.child_nav.${file_name}`).addClass('active')
+    let file_name = window.location.href.split("/").pop().replace(".html", "");
+    $(`.child_nav`).removeClass("active");
+    $(`.child_nav.${file_name}`).addClass("active");
   }
 
-  $('.scroll_to_top').on('click', function() {
-    $('html, body').animate({scrollTop:0});
-  })
+  $(".scroll_to_top").on("click", function () {
+    $("html, body").animate({ scrollTop: 0 });
+  });
 
   function analytics(i, s, o, g, r, a, m) {
     i["GoogleAnalyticsObject"] = r;
     (i[r] =
       i[r] ||
-      function() {
+      function () {
         (i[r].q = i[r].q || []).push(arguments);
       }),
       (i[r].l = 1 * new Date());
@@ -78,20 +81,13 @@ $(function() {
   script.setAttribute("content", "width=device-width, initial-scale=1.0");
   document.head.appendChild(script);
 
-  // var script_fontawesome = document.createElement("script");
-  // script_fontawesome.setAttribute(
-  //   "src",
-  //   "https://kit.fontawesome.com/04e6437977.js"
-  // );
-  // document.head.appendChild(script_fontawesome);
-
   var initialize = {
-    index: function() {
+    index: function () {
       //トップスライダー
       var mySwiper = new Swiper(".swiper-container", {
         direction: "horizontal",
         pagination: {
-          el: ".swiper-pagination"
+          el: ".swiper-pagination",
         },
         grabCursor: true,
         centeredSlides: true,
@@ -100,16 +96,16 @@ $(function() {
         breakpoints: {
           1000: {
             slidesPerView: 1,
-            spaceBetween: 0
-          }
-        }
+            spaceBetween: 0,
+          },
+        },
       });
-      setInterval(function() {
+      setInterval(function () {
         mySwiper.slideNext(800, true);
       }, 8000);
 
       // facebook
-      (function(d, s, id) {
+      (function (d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -119,11 +115,11 @@ $(function() {
           "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10&appId=1452992854921239";
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "facebook-jssdk");
-      window.fbAsyncInit = function() {
+      window.fbAsyncInit = function () {
         FB.init({
           appId: "1452992854921239",
           xfbml: true,
-          version: "v2.2"
+          version: "v2.2",
         });
       };
 
@@ -140,15 +136,15 @@ $(function() {
                   data-adapt-container-width="true"
                   data-hide-cover="false"
                   data-show-facepile="false"
-                >`
+                >`;
       }
 
       // ページプラグインを追加する要素
-      var facebookWrap = $('.fb-iframe-container');
-      var fbBeforeWidth = ''; // 前回変更したときの幅
+      var facebookWrap = $(".fb-iframe-container");
+      var fbBeforeWidth = ""; // 前回変更したときの幅
       var fbWidth = facebookWrap.width(); // 今回変更する幅
       var fbTimer = false;
-      $(window).on('load resize', function () {
+      $(window).on("load resize", function () {
         if (fbTimer !== false) {
           clearTimeout(fbTimer);
         }
@@ -170,21 +166,17 @@ $(function() {
       ) {
         //ニュース
         $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oi9egak/public/values?alt=json",
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/お知らせ?key=${API_KEY}`,
           dataType: "json",
           async: true,
-          success: function(data) {
-            let entries = data.feed.entry;
-            let news_array = [];
-            for (let i = 2; i < entries.length; i = i + 2) {
-              let obj = {
-                date: entries[i].content.$t,
-                content: entries[i + 1].content.$t
+          success: function (data) {
+            let news_array = data.values.map((val) => {
+              return {
+                date: val[0],
+                content: val[1],
               };
-              news_array.push(obj);
-            }
-            for (let i = 0; i < 5; i++) {
+            });
+            for (let i = 1; i < 6; i++) {
               //リンクをタグに変換
               let reg = new RegExp(
                 /\[(.+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/
@@ -196,7 +188,7 @@ $(function() {
               let single_news = `<tr><th>${news_array[i].date}</th><td>${content_modified}</td></tr>`;
               $("#topics").append(single_news);
             }
-          }
+          },
         });
       } else if (
         location.pathname === "/toda_labo/en/index.html" ||
@@ -204,21 +196,18 @@ $(function() {
       ) {
         //ニュース
         $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oupqnq2/public/values?alt=json",
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/News?key=${API_KEY}`,
           dataType: "json",
           async: true,
-          success: function(data) {
+          success: function (data) {
             let entries = data.feed.entry;
-            let news_array = [];
-            for (let i = 2; i < entries.length; i = i + 2) {
-              let obj = {
-                date: entries[i].content.$t,
-                content: entries[i + 1].content.$t
+            let news_array = data.values.map((val) => {
+              return {
+                date: val[0],
+                content: val[1],
               };
-              news_array.push(obj);
-            }
-            for (let i = 0; i < 5; i++) {
+            });
+            for (let i = 1; i < 6; i++) {
               //リンクをタグに変換
               let reg = new RegExp(
                 /\[(.+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/
@@ -230,7 +219,7 @@ $(function() {
               let single_news = `<tr><th>${news_array[i].date}</th><td>${content_modified}</td></tr>`;
               $("#topics").append(single_news);
             }
-          }
+          },
         });
 
         //【英語→日本語】日本語ページと英語ページの入れ替えを作るURL作成スクリプト
@@ -239,26 +228,21 @@ $(function() {
         $("#ja a").attr("href", NewUrl);
       }
     },
-    news: function() {
+    news: function () {
       if (location.pathname === "/toda_labo/news.html") {
         $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oi9egak/public/values?alt=json",
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/お知らせ?key=${API_KEY}`,
           dataType: "json",
           async: true,
-          success: function(data) {
-            let entries = data.feed.entry;
-            let news_array = [];
-            for (let i = 2; i < entries.length; i = i + 2) {
-              let obj = {
-                date: entries[i].content.$t,
-                content: entries[i + 1].content.$t
+          success: function (data) {
+            let news_array = data.values.map((val) => {
+              return {
+                date: val[0],
+                content: val[1],
               };
-              news_array.push(obj);
-            }
-            for (let i = 0; i < news_array.length; i++) {
+            });
+            for (let i = 1; i < news_array.length; i++) {
               //リンクをタグに変換
-              // let reg = new RegExp(/\[(.+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/)
               let reg = new RegExp(
                 /\[(.[^\]]+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/g
               );
@@ -269,25 +253,21 @@ $(function() {
               let single_news = `<tr><th>${news_array[i].date}</th><td>${content_modified}</td></tr>`;
               $("#topics").append(single_news);
             }
-          }
+          },
         });
       } else if (location.pathname === "/toda_labo/en/news.html") {
         $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/oupqnq2/public/values?alt=json",
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/News?key=${API_KEY}`,
           dataType: "json",
           async: true,
-          success: function(data) {
-            let entries = data.feed.entry;
-            let news_array = [];
-            for (let i = 2; i < entries.length; i = i + 2) {
-              let obj = {
-                date: entries[i].content.$t,
-                content: entries[i + 1].content.$t
+          success: function (data) {
+            let news_array = data.values.map((val) => {
+              return {
+                date: val[0],
+                content: val[1],
               };
-              news_array.push(obj);
-            }
-            for (let i = 0; i < news_array.length; i++) {
+            });
+            for (let i = 1; i < news_array.length; i++) {
               //リンクをタグに変換
               // let reg = new RegExp(/\[(.+)\]\((https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\)/)
               let reg = new RegExp(
@@ -300,563 +280,254 @@ $(function() {
               let single_news = `<tr><th>${news_array[i].date}</th><td>${content_modified}</td></tr>`;
               $("#topics").append(single_news);
             }
-          }
+          },
         });
       }
     },
-    intro: function() {},
-    achievement: function() {
+    intro: function () {},
+    achievement: function () {
       //学術論文
       $.ajax({
-        url:
-          "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/od6/public/values?alt=json",
+        url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/学術論文?key=${API_KEY}`,
         dataType: "json",
         async: true,
-        success: function(data, order) {
-          let entries = data.feed.entry;
-          let article_array = {};
-          let col_length = 0;
-          for (var i = 1; i < entries.length; i++) {
-            if(entries[i].gs$cell.col === "1") {
-              col_length = i;
-              break
+        success: function (data) {
+          const head = data.values.shift();
+          const articles = {};
+          data.values.forEach((val) => {
+            const year_index = head.indexOf("year");
+            const year = val[year_index];
+            const obj = {};
+            val.forEach((datam, i) => (obj[head[i]] = datam));
+            if (articles[year]) {
+              articles[year].push(obj);
+            } else {
+              articles[year] = [obj];
             }
-          }
-          function getOrder(target) {
-            var order = 0
-            for (var i = 0; i < entries.length; i++) {
-              if (entries[i].content.$t === target) {
-                order = i
-                break;
-              }
-            }
-            return order
-          }
+          });
 
-          for (let i = col_length; i < entries.length; i = i + col_length) {
-            article_array[entries[i + getOrder('year')].content.$t] = [];
-          }
-
-          for (let i = col_length; i < entries.length; i = i + col_length) {
-
-            let obj = {
-              author: "",
-              title: "",
-              link: "",
-              article: ""
-            };
-            obj.author = entries[i + getOrder('author')].content.$t.replace(
-              "T. Toda",
-              '<span class="prof">T. Toda</span>'
-            );
-
-            obj.title = entries[i + getOrder('title')].content.$t.replace(
-              /\*\*([^\*\*]+)\*\*/g,
-              '<span class="italic">' + "$1" + "</span>"
-            );
-
-            obj.link = entries[i + getOrder('link')].content.$t;
-
-            obj.article = entries[i + getOrder('article')].content.$t.replace(
-              /\*\*([^\*\*]+)\*\*/g,
-              '<span class="italic">' + "$1" + "</span>"
-            );
-            if(entries[i + getOrder('year')].content.$t.match(/\d{4}/g)) {
-              article_array[entries[i + getOrder('year')].content.$t].push(obj);
-            }
-          }
-          let year_array = Object.keys(article_array).reverse();
+          let year_array = Object.keys(articles).reverse();
 
           $(".academic_paper_wrapper").append(`<ol class="year_list"></ol>`);
-          
-          year_array.forEach(year => {
-            $('.scientific_papers_years').append(`<li><a href="#Journal${year}">${year}</a></li>`)
+
+          year_array.forEach((year) => {
+            $(".scientific_papers_years").append(
+              `<li><a href="#Journal${year}">${year}</a></li>`
+            );
 
             $(`.year_list`).append(
               `<h5 class="YearDiv"><a name="Journal${year}"></a>${year}</h5></ol>`
             );
-            article_array[year].forEach(article => {
+            articles[year].forEach((article) => {
               $(`.year_list`).append(
                 `<li><a name="Othman${year}"></a>${article.author}<br /><div class="article"><a href='${article.link}' target='_blank'>${article.title}</a><br />${article.article}</div></li>`
               );
             });
           });
-        }
+        },
       });
 
       //国際会議
       $.ajax({
-        url:
-          "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/ot9j46w/public/values?alt=json",
+        url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/学術論文?key=${API_KEY}`,
         dataType: "json",
         async: true,
-        success: function(data, order) {
-          let entries = data.feed.entry;
-          let article_array = [];
-          for (let i = 3; i < entries.length; i = i + 3) {
-            let obj = {
-              author: "",
-              title: "",
-              association: ""
-            };
-            if (entries[i] !== undefined) {
-              obj.author = entries[i].content.$t.replace(
-                "T. Toda",
-                '<span class="prof">T. Toda</span>'
-              );
-            }
-            if (entries[i + 2] !== undefined) {
-              obj.title = entries[i + 1].content.$t.replace(
-                /\*\*([^\*\*]+)\*\*/g,
-                '<span class="italic">' + "$1" + "</span>"
-              );
-            }
-            if (entries[i + 3] !== undefined) {
-              obj.association = entries[i + 2].content.$t;
-            }
-            article_array.push(obj);
-          }
-          article_array.forEach(article => {
+        success: function (data, order) {
+          let head = data.values.shift();
+          const article_array = data.values.map((val) => {
+            let obj = {};
+            val.forEach((datam, i) => (obj[head[i]] = datam));
+            return obj;
+          });
+
+          article_array.forEach((article) => {
             $(".international_conference_wrapper").append(
               `<li>${article.author}<br /><div class="article">${article.title}<br />${article.association}</div></li>`
             );
           });
-        }
+        },
       });
 
       //国内学会
       $.ajax({
-        url:
-          "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/ojan6bf/public/values?alt=json",
+        url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/国内学会?key=${API_KEY}`,
         dataType: "json",
         async: true,
-        success: function(data, order) {
-          let entries = data.feed.entry;
-          let article_array = [];
-          for (let i = 3; i < entries.length; i = i + 3) {
-            let obj = {
-              author: "",
-              title: "",
-              place: ""
-            };
-            if (entries[i] !== undefined) {
-              obj.author = entries[i].content.$t.replace(
-                "T. Toda",
-                '<span class="prof">T. Toda</span>'
-              );
-            }
-            if (entries[i + 2] !== undefined) {
-              obj.title = entries[i + 1].content.$t;
-            }
-            if (entries[i + 3] !== undefined) {
-              obj.place = entries[i + 2].content.$t;
-            }
-            article_array.push(obj);
-          }
-          article_array.forEach(article => {
+        success: function (data, order) {
+          let head = data.values.shift();
+          const article_array = data.values.map((val) => {
+            let obj = {};
+            val.forEach((datam, i) => (obj[head[i]] = datam));
+            return obj;
+          });
+          article_array.forEach((article) => {
             $(".domestic_conference_wrapper").append(
               `<li>${article.author}<br /><div class="article">${article.title}<br />${article.place}</div></li>`
             );
           });
-        }
+        },
       });
     },
-    study: function() {
-      $("img").each(function(index, elm) {
+    study: function () {
+      $("img").each(function (index, elm) {
         let imgsrc = $(elm).attr("src");
         $(elm).wrap(`<a href="${imgsrc}" rel="lightbox"></a>`);
       });
     },
-    project: function() {
-      $("img").each(function(index, elm) {
+    project: function () {
+      $("img").each(function (index, elm) {
         let imgsrc = $(elm).attr("src");
         $(elm).wrap(`<a href="${imgsrc}" rel="lightbox"></a>`);
       });
     },
-    member: function() {
-      if (location.pathname === "/toda_labo/active_member.html") {
+    member: function () {
+      if (location.pathname.includes("active_member")) {
         $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/ow66bcr/public/values?alt=json",
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/研究室メンバー?key=${API_KEY}`,
           dataType: "json",
           async: true,
           success: function (data) {
-            let entries = data.feed.entry;
-            let key_order = {}
-            for (let i = 0; i < entries.length; i++) {
-              if (entries[i].gs$cell.row === "2") {
-                break;
-              }
-              key_order[entries[i].gs$cell.$t] = Number(entries[i].gs$cell.col)
-            }
-            let key_length = Object.keys(key_order).length
-            let single_profile = `<ul>`
-            for (let i = key_length; i < entries.length; i = i + key_length) {
-              let biography_content =
-                entries[i + key_order[column_title.biography_title_ja] - 1]
-                  .content.$t;
-              biography_content = biography_content === '-' ? '' : `<p class="biography">${biography_content}</p>`
+            let head = data.values.shift();
+            const members = data.values.map((val) => {
+              let obj = {};
+              val.forEach((datam, i) => (obj[head[i]] = datam));
+              return obj;
+            });
+            const lang = location.pathname.includes("/en/") ? "en" : "ja";
+            let single_profile = `<ul>`;
+            members.forEach((member) => {
               single_profile += `
               <li class="single_profile">
-                <img src="./assets/images/members/${
-                  entries[i + key_order[column_title.image_title] - 1].content
-                    .$t
-                }.jpg"/>
+                <img src="${lang === "en" ? "../" : ""}assets/images/members/${
+                member["画像タイトル"]
+              }.jpg"/>
                 <div>
                   <p class="position">${
-                    entries[i + key_order[column_title.position_title_ja] - 1]
-                      .content.$t
+                    member[lang === "ja" ? "役職" : "position"]
                   }</p>
-                  <p class="name">${
-                    entries[i + key_order[column_title.name_title_ja] - 1]
-                      .content.$t
+                  <p class="name">${member[lang === "ja" ? "名前" : "name"]}</p>
+                  <p class="biography">${
+                    member[lang === "ja" ? "略歴" : "biography"]
                   }</p>
-                  ${biography_content}
                   <p class="comment">${
-                    entries[i + key_order[column_title.comment_title_ja] - 1]
-                      .content.$t
+                    member[lang === "ja" ? "一言" : "comment"]
                   }</p>
                 </div>
               </li>
             `;
-            }
-            single_profile += `</ul>`
-            $('.member_wrapper').append(single_profile)
-          }
+            });
+            single_profile += `</ul>`;
+            $(".member_wrapper").append(single_profile);
+          },
         });
-      } else if (location.pathname === "/toda_labo/en/active_member.html") {
+      } else if (location.pathname.includes("obog.html")) {
+        const lang = location.pathname.includes("/en/") ? "en" : "ja";
         $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/ow66bcr/public/values?alt=json",
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/OB・OG?key=${API_KEY}`,
           dataType: "json",
           async: true,
           success: function (data) {
-            let entries = data.feed.entry;
-            let key_order = {}
-            for (let i = 0; i < entries.length; i++) {
-              if (entries[i].gs$cell.row === "2") {
-                break;
+            const head = data.values.shift();
+            const members = {};
+            data.values.forEach((val) => {
+              const category_index = head.indexOf("カテゴリ");
+              const category = val[category_index];
+              const obj = {};
+              val.forEach((datam, i) => (obj[head[i]] = datam));
+              if (members[category]) {
+                members[category].push(obj);
+              } else {
+                members[category] = [obj];
               }
-              key_order[entries[i].gs$cell.$t] = Number(entries[i].gs$cell.col)
-            }
-            let key_length = Object.keys(key_order).length
-            let single_profile = `<ul>`
-            for (let i = key_length; i < entries.length; i = i + key_length) {
-              let biography_content =
-                entries[i + key_order[column_title.biography_title_en] - 1]
-                  .content.$t;
-              biography_content = biography_content === '-' ? '' : `<p class="biography">${biography_content}</p>`
-              single_profile += `
-              <li class="single_profile">
-                <img src="../assets/images/members/${
-                  entries[i + key_order[column_title.image_title] - 1].content
-                    .$t
-                }.jpg"/>
-                <div>
-                  <p class="position">${
-                    entries[i + key_order[column_title.position_title_en] - 1]
-                      .content.$t
-                  }</p>
-                  <p class="name">${
-                    entries[i + key_order[column_title.name_title_en] - 1]
-                      .content.$t
-                  }</p>
-                  ${biography_content}
-                  <p class="comment">${
-                    entries[i + key_order[column_title.comment_title_en] - 1]
-                      .content.$t
-                  }</p>
-                </div>
-              </li>
-            `;
-            }
-            single_profile += `</ul>`
-            $('.member_wrapper').append(single_profile)
-          }
-        });
-      } else if (location.pathname === "/toda_labo/obog.html") {
-        $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/olry89r/public/values?alt=json",
-          dataType: "json",
-          async: true,
-          success: function (data) {
-            // データ整形
-            let member_address = []
-            let entries = data.feed.entry;
-            let key_order = {}
-            for (let i = 0; i < entries.length; i++) {
-              if (entries[i].gs$cell.row === "2") {
-                break;
-              }
-              key_order[entries[i].gs$cell.$t] = Number(entries[i].gs$cell.col)
-            }
-            let key_length = Object.keys(key_order).length
-            // リスト描画
-            let researcher_profile = `<h4>大学、研究所</h4><ul>`
-            let officer_profile = `<h4>国家・地方公務員、財団法人</h4><ul>`
-            let teacher_profile = `<h4>学校教員（小中高）</h4><ul>`
-            let company_profile = `<h4>企業</h4><ul>`
-            let interenational_profile = `<h4>国際協力</h4><ul>`
-            for (let i = key_length; i < entries.length; i = i + key_length) {
-              let plot_content = entries[i + key_order['座標'] - 1].content.$t
-              let job_content = entries[i + key_order['職業'] - 1].content.$t
-              let biography_content =
-                entries[i + key_order[column_title.biography_title_ja] - 1]
-                  .content.$t;
-              if (plot_content !== '-') {
-                let obj = {}
-                obj["id"] =
-                  entries[
-                    i + key_order[column_title.image_title] - 1
-                  ].content.$t;
-                obj["name"] =
-                  entries[
-                    i + key_order[column_title.name_title_ja] - 1
-                  ].content.$t;
-                obj["content"] = job_content;
-                plot_content.replace(/lat:(\-?\d+\.+?\d+)\,lng:(\-?\d+\.+?\d+)/, '$1, $2')
-                obj['lat'] = Number(RegExp.$1)
-                obj['lng'] = Number(RegExp.$2)
-                member_address.push(obj)
-              }
-              biography_content = biography_content === '-' ? '' : `<p class="biography"><span class="title">略歴：</span>${biography_content}</p>`
-              job_content =
-                job_content === "-"
-                  ? ""
-                  : `<p class="job">${job_content}</p>`;
-              let profile = `
-                <li class="single_profile" id="${
-                  entries[i + key_order[column_title.image_title] - 1].content.$t
+            });
+            Object.entries(members).forEach(([category, data]) => {
+              let members_html = "";
+              data.forEach((datam) => {
+                members_html += `<li class="single_profile" id="${
+                  datam["画像タイトル"]
                 }">
                   <img src="./assets/images/members/${
-                    entries[i + key_order[column_title.image_title] - 1].content.$t
+                    datam["画像タイトル"]
                   }.jpg"/>
                   <div>
-                    ${job_content}
-                    <p class="name">${
-                      entries[i + key_order[column_title.name_title_ja] - 1]
-                        .content.$t
+                    <p class="position">${
+                      lang === "ja" ? datam["職業"] : datam["job"]
                     }</p>
-                    ${biography_content}
+                    <p class="name">${
+                      lang === "ja" ? datam["名前"] : datam["name"]
+                    }</p>
+                    <p>${lang === "ja" ? datam["略歴"] : datam["biography"]}</p>
                   </div>
-                </li>
-              `;
-              switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
-                case "大学、研究所":
-                  researcher_profile += profile
-                  break;
-                case "国家・地方公務員、財団法人":
-                  officer_profile += profile
-                  break;
-                case "学校教員（小中高）":
-                  teacher_profile += profile
-                  break;
-                case "企業":
-                  company_profile += profile
-                  break;
-                case "国際協力":
-                  interenational_profile += profile
-                  break;
-              }
-            }
-            researcher_profile += `</ul>`
-            officer_profile += `</ul>`
-            teacher_profile += `</ul>`
-            company_profile += `</ul>`
-            interenational_profile += `</ul>`
-            $('.member_wrapper').append(researcher_profile).append(officer_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
+                </li>`;
+              });
+              $(".member_wrapper").append(
+                `<h4>${category}</h4><ul>${members_html}</ul>`
+              );
+            });
 
             // Map
             var map;
             var marker = [];
             var infowindow = [];
             var currentInfoWindow = null;
-            initMap()
+            initMap();
             function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
+              map = new google.maps.Map(document.getElementById("map"), {
                 center: { lat: 20, lng: 136.881556 },
-                zoom: 2
+                zoom: 2,
               });
 
-              member_address.forEach(function (val, i) {
-                var markerLatLng = { lat: member_address[i]['lat'], lng: member_address[i]['lng'] };
+              Object.values(members).forEach((grouped_members, i) => {
+                grouped_members.forEach((member) => {
+                  const coodinate = member["座標"];
+                  coodinate.replace(
+                    /lat\:([\d\.]+)\W+lng\:([\d\.]+)/,
+                    "$1, $2"
+                  );
+                  const lat = Number(RegExp.$1);
+                  const lng = Number(RegExp.$2);
 
-                marker[i] = new google.maps.Marker({
-                  position: markerLatLng,
-                  map: map,
-                  title: member_address[i][column_title.name_title_en],
-                });
+                  marker[i] = new google.maps.Marker({
+                    position: { lat, lng },
+                    map,
+                    title: member["name"],
+                  });
 
-                // infobox 用の div エレメントを生成
-                var infoboxContent = document.createElement('div');
-                // infobox に表示するHTML
-                infoboxContent.innerHTML = `
-                  <div class="infobox">
-                    <a class="name" href="#${member_address[i]["id"]}">${
-                  member_address[i][column_title.name_title_en]
-                }</a>
-                    <p class="content">${member_address[i]["content"]}</p>
-                  </div >
-                `;
-                infowindow[i] = new google.maps.InfoWindow({
-                  content: infoboxContent
-                });
+                  // infobox 用の div エレメントを生成
+                  var infoboxContent = document.createElement("div");
+                  // infobox に表示するHTML
+                  infoboxContent.innerHTML = `
+                    <div class="infobox">
+                      <a class="name" href="#${member["画像タイトル"]}">${
+                    member["name"]
+                  }</a>
+                      <p class="content">${
+                        member[lang === "ja" ? "職業" : "job"]
+                      }</p>
+                    </div>
+                  `;
+                  infowindow[i] = new google.maps.InfoWindow({
+                    content: infoboxContent,
+                  });
 
-                google.maps.event.addListener(marker[i], 'click', function () {
-                  if (currentInfoWindow) {
-                    currentInfoWindow.close();
-                  }
-                  infowindow[i].open(map, marker[i]);
-                  currentInfoWindow = infowindow[i]
-                });
-              });
-            }
-          }
-        });
-      } else if(location.pathname === "/toda_labo/en/obog.html") {
-        $.ajax({
-          url:
-            "https://spreadsheets.google.com/feeds/cells/1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk/olry89r/public/values?alt=json",
-          dataType: "json",
-          async: true,
-          success: function (data) {
-            // データ整形
-            let member_address = []
-            let entries = data.feed.entry;
-            let key_order = {}
-            for (let i = 0; i < entries.length; i++) {
-              if (entries[i].gs$cell.row === "2") {
-                break;
-              }
-              key_order[entries[i].gs$cell.$t] = Number(entries[i].gs$cell.col)
-            }
-            let key_length = Object.keys(key_order).length
-            // リスト描画
-            let researcher_profile = `<h4>Researcher</h4><ul>`
-            let officer_profile = `<h4>Public office worker</h4><ul>`
-            let teacher_profile = `<h4>Teacher</h4><ul>`
-            let company_profile = `<h4>Office Worker</h4><ul>`
-            let interenational_profile = `<h4>International Organization Worker</h4><ul>`
-            for (let i = key_length; i < entries.length; i = i + key_length) {
-              let plot_content = entries[i + key_order['座標'] - 1].content.$t
-              let job_content = entries[i + key_order['job'] - 1].content.$t
-              let biography_content =
-                entries[i + key_order[column_title.biography_title_en] - 1]
-                  .content.$t;
-              if (plot_content !== '-') {
-                let obj = {}
-                obj['id'] = entries[i + key_order[column_title.image_title] - 1].content.$t
-                obj[column_title.name_title_en] =
-                  entries[
-                    i + key_order[column_title.name_title_en] - 1
-                  ].content.$t;
-                obj["content"] = job_content;
-                plot_content.replace(/lat:(\-?\d+\.+?\d+)\,lng:(\-?\d+\.+?\d+)/, '$1, $2')
-                obj['lat'] = Number(RegExp.$1)
-                obj['lng'] = Number(RegExp.$2)
-                member_address.push(obj)
-              }
-              biography_content =
-                biography_content === "-"
-                  ? ""
-                  : `<p class="biography"><span class="title">Biography：</span>${biography_content}</p>`;
-              job_content =
-                job_content === "-"
-                  ? ""
-                  : `<p class="job">${job_content}</p>`;
-              let profile = `
-                <li class="single_profile" id="${
-                  entries[i + key_order[column_title.image_title] - 1].content.$t
-                }">
-                  <img src="../assets/images/members/${
-                    entries[i + key_order[column_title.image_title] - 1].content.$t
-                  }.jpg"/>
-                  <div>
-                    ${job_content}
-                    <p class="name">${
-                      entries[i + key_order[column_title.name_title_en] - 1]
-                        .content.$t
-                    }</p>
-                    ${biography_content}
-                  </div>
-                </li>
-              `;
-              switch (entries[i + key_order['カテゴリ'] - 1].content.$t) {
-                case "大学、研究所":
-                  researcher_profile += profile
-                  break;
-                case "国家・地方公務員、財団法人":
-                  officer_profile += profile
-                  break;
-                case "学校教員（小中高）":
-                  teacher_profile += profile
-                  break;
-                case "企業":
-                  company_profile += profile
-                  break;
-                case "国際協力":
-                  interenational_profile += profile
-                  break;
-              }
-            }
-            researcher_profile += `</ul>`
-            officer_profile += `</ul>`
-            teacher_profile += `</ul>`
-            company_profile += `</ul>`
-            interenational_profile += `</ul>`
-            $('.member_wrapper').append(researcher_profile).append(officer_profile).append(teacher_profile).append(company_profile).append(interenational_profile)
-
-            // Map
-            var map;
-            var marker = [];
-            var infowindow = [];
-            var currentInfoWindow = null;
-            initMap()
-            function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 20, lng: 136.881556 },
-                zoom: 2
-              });
-
-              member_address.forEach(function (val, i) {
-                var markerLatLng = { lat: member_address[i]['lat'], lng: member_address[i]['lng'] };
-
-                marker[i] = new google.maps.Marker({
-                  position: markerLatLng,
-                  map: map,
-                  title: member_address[i][column_title.name_title_en],
-                });
-
-                // infobox 用の div エレメントを生成
-                var infoboxContent = document.createElement('div');
-                // infobox に表示するHTML
-                infoboxContent.innerHTML = `
-                  <div class="infobox">
-                    <a class="name" href="#${member_address[i]["id"]}">${
-                  member_address[i][column_title.name_title_en]
-                }</a>
-                    <p class="content">${member_address[i]["content"]}</p>
-                  </div >
-                `;
-                infowindow[i] = new google.maps.InfoWindow({
-                  content: infoboxContent
-                });
-
-                google.maps.event.addListener(marker[i], 'click', function () {
-                  if (currentInfoWindow) {
-                    currentInfoWindow.close();
-                  }
-                  infowindow[i].open(map, marker[i]);
-                  currentInfoWindow = infowindow[i]
+                  google.maps.event.addListener(
+                    marker[i],
+                    "click",
+                    function () {
+                      if (currentInfoWindow) {
+                        currentInfoWindow.close();
+                      }
+                      infowindow[i].open(map, marker[i]);
+                      currentInfoWindow = infowindow[i];
+                    }
+                  );
                 });
               });
             }
-          }
+          },
         });
       }
-    }
+    },
   };
-  console.log(pageType);
   initialize[pageType]();
 });
