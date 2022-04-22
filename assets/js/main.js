@@ -200,7 +200,6 @@ $(function () {
           dataType: "json",
           async: true,
           success: function (data) {
-            let entries = data.feed.entry;
             let news_array = data.values.map((val) => {
               return {
                 date: val[0],
@@ -446,9 +445,9 @@ $(function () {
                 members_html += `<li class="single_profile" id="${
                   datam["画像タイトル"]
                 }">
-                  <img src="./assets/images/members/${
-                    datam["画像タイトル"]
-                  }.jpg"/>
+                  <img src="${
+                    lang === "en" ? "../" : ""
+                  }assets/images/members/${datam["画像タイトル"]}.jpg"/>
                   <div>
                     <p class="position">${
                       lang === "ja" ? datam["職業"] : datam["job"]

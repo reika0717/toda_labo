@@ -436,7 +436,38 @@ h1
     text-align: center
     margin-top: 5px
     margin-left: 0px
-
+  .scroll_to_top
+    position: fixed
+    right: 90px
+    bottom: 30px
+    width: 60px
+    height: 60px
+    border-radius: 100px
+    background-color: #344a5b
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, .6)
+    transition: .3s
+    &:after
+      content: ''
+      width: 9px
+      height: 9px
+      border-top: 2px solid #fff
+      border-left: 2px solid #fff
+      transform: translate(-50%, -50%) rotate(45deg)
+      position: absolute
+      top: 50%
+      left: 50%
+    &:before
+      content: ''
+      width: 13px
+      height: 19px
+      border-top: 2px solid #fff
+      transform: rotate(90deg)
+      position: absolute
+      top: 35%
+      left: 24%
+    &:hover
+      box-shadow: none
+      cursor: pointer
 /*==========================基本設定=============================
 
 /*==========================画像配置============================
@@ -820,7 +851,7 @@ body
         list-style: none
         display: flex
         justify-content: flex-start
-        align-items: end
+        align-items: flex-start
         padding-bottom: 14px
         margin-bottom: 13px
         border-bottom: .5px solid rgba(0, 0, 0, 0.3)
