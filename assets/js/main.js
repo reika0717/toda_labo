@@ -1,6 +1,9 @@
 const API_KEY = "AIzaSyDyp7uWrxIBaGxW4mT1fqR1QdbrcnJZShw"; // TODO: 見えないようにする
 const SPREADSHEET_ID = "1tS9IKv0vphga9-MnUEzLFCuB2I32s1yiG2e2XE4pjQk";
 
+const is_prod = location.origin === "https://lre.soka.ac.jp";
+const PATH = is_prod ? "/" : "/toda_labo/";
+
 $(function () {
   var pageType = $("html").attr("data-page-type");
   const column_title = {
@@ -27,16 +30,15 @@ $(function () {
 
   // 言語設定のリンク
   var CurUrl = location.href;
-  if (CurUrl.indexOf("toda_labo/en/") !== -1) {
+  if (CurUrl.includes(`${PATH}en/`)) {
+    $(".main_language").attr("href", CurUrl.replace(`${PATH}en/`, `${PATH}`));
+  } else if (is_prod) {
     $(".main_language").attr(
       "href",
-      CurUrl.replace("toda_labo/en/", "toda_labo/")
+      CurUrl.replace(location.origin, `${location.origin}/en`)
     );
   } else {
-    $(".main_language").attr(
-      "href",
-      CurUrl.replace("toda_labo/", "toda_labo/en/")
-    );
+    $(".main_language").attr("href", CurUrl.replace(PATH, `${PATH}en/`));
   }
 
   // グローバルナビゲーション
@@ -161,8 +163,8 @@ $(function () {
       });
 
       if (
-        location.pathname === "/toda_labo/index.html" ||
-        location.pathname === "/toda_labo/"
+        location.pathname === PATH ||
+        location.pathname === `${PATH}index.html`
       ) {
         //ニュース
         $.ajax({
@@ -191,8 +193,8 @@ $(function () {
           },
         });
       } else if (
-        location.pathname === "/toda_labo/en/index.html" ||
-        location.pathname === "/toda_labo/en/"
+        location.pathname === `${PATH}en/` ||
+        location.pathname === `${PATH}en/index.html`
       ) {
         //ニュース
         $.ajax({
@@ -228,7 +230,7 @@ $(function () {
       }
     },
     news: function () {
-      if (location.pathname === "/toda_labo/news.html") {
+      if (location.pathname === `${PATH}news.html`) {
         $.ajax({
           url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/お知らせ?key=${API_KEY}`,
           dataType: "json",
@@ -254,7 +256,7 @@ $(function () {
             }
           },
         });
-      } else if (location.pathname === "/toda_labo/en/news.html") {
+      } else if (location.pathname === `${PATH}en/news.html`) {
         $.ajax({
           url: `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/News?key=${API_KEY}`,
           dataType: "json",
